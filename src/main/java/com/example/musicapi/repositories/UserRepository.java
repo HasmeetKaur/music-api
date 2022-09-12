@@ -9,5 +9,4 @@ import java.util.Map;
 import java.util.Optional;
 
 public interface UserRepository extends JpaRepository<User, Long> {
-    Optional<Album> findById(long id);
 }

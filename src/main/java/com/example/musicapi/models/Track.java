@@ -1,7 +1,8 @@
 package com.example.musicapi.models;
 
-import javax.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import javax.persistence.*;
 
 @Entity(name = "tracks")
 public class Track {
@@ -9,12 +10,18 @@ public class Track {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
     @Column(name = "name")
     public String name;
-    @Column(name = "artist")
+
+    @ManyToOne
+    @JoinColumn(name = "artist_id")
+    @JsonIgnoreProperties({"tracks"})
     public Artist artist;
+
     @Column(name = "genre")
     public Genre genre;
+
     @Column(name = "length")
     public double length;
 

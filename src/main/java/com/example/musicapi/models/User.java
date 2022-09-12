@@ -1,5 +1,7 @@
 package com.example.musicapi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,12 +16,20 @@ public class User {
     @Column(name = "user_name")
     private String userName;
     
+    @OneToMany
+    @JoinColumn(name = "album_id")
     private List<Album> favouriteAlbums;
 
+    @OneToMany
+    @JoinColumn(name = "artist_id")
     private List<Artist> favouriteArtists;
 
+    @OneToMany
+    @JoinColumn(name = "track_id")
     private List<Track> favouriteTracks;
 
+    @OneToMany(mappedBy = "user")
+    @JsonIgnoreProperties({"user"})
     private List<Playlist> playlists;
 
     public User(String userName) {

@@ -1,5 +1,6 @@
 package com.example.musicapi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.apache.catalina.User;
 
 import javax.persistence.*;
@@ -18,10 +19,13 @@ public class Playlist {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "user")
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties({"playlists"})
     private User user;
 
-    @Column(name = "track")
+    @OneToMany
+    @JoinColumn(name = "track_id")
     private List<Track> tracks;
 
     //instantiation

@@ -1,5 +1,7 @@
 package com.example.musicapi.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import javax.sound.midi.Track;
 import java.util.ArrayList;
@@ -19,10 +21,12 @@ public class Artist {
     @Column(name = "genre")
     private Genre genre;
 
-    @Column(name = "album")
+    @OneToMany(mappedBy = "artist")
+    @JsonIgnoreProperties({"artist"})
     private List<Album> albums;
 
-    @Column(name = "track")
+    @OneToMany(mappedBy = "artist")
+    @JsonIgnoreProperties({"artist"})
     private List<Track> tracks;
 
     //instantiation

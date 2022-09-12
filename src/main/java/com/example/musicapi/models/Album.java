@@ -29,10 +29,7 @@ public class Album {
 
     @OneToMany
     @JoinColumn(name = "track_id")
-    @JsonIgnoreProperties({"albums"})
     private List<Track> tracks;
-
-
 
     public Album(String name, Artist artist, int year, Genre genre){
         this.name = name;
