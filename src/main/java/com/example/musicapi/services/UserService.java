@@ -82,18 +82,45 @@ public class UserService {
         }
     }
 
-    public Reply removeTrackToFavouritesById(Long trackId, Long userId) {
+    public Reply removeTrackFromFavouritesById(Long trackId, Long userId) {
         Optional<User> user = userRepository.findById(userId);
         Optional<Track> track = trackRepository.findById(trackId);
 
         if (user.isEmpty() || track.isEmpty()) {
             return new Reply(false, "Not found.");
         } else if (!user.get().getFavouriteTracks().contains(track.get())) {
-            return new Reply(false, "Track not saved as favourite.");
+            return new Reply(false, "Track not in favourites.");
         } else {
             user.get().getFavouriteTracks().remove(track.get());
             return new Reply(true, "Track successfully added to favourites.");
         }
     }
 
+    public Reply removeAlbumToFavouritesById(Long albumId, Long userId) {
+        Optional<User> user = userRepository.findById(userId);
+        Optional<Album> album = albumRepository.findById(albumId);
+
+        if (user.isEmpty() || album.isEmpty()) {
+            return new Reply(false, "Not found.");
+        } else if (!user.get().getFavouriteTracks().contains(album.get())) {
+            return new Reply(false, "Album not in favourites.");
+        } else {
+            user.get().getFavouriteTracks().remove(album.get());
+            return new Reply(true, "Album successfully added to favourites.");
+        }
+    }
+
+    public Reply removeArtistFromFavouritesById(Long artistId, Long userId) {
+        Optional<User> user = userRepository.findById(userId);
+        Optional<Artist> artist = artistRepository.findById(artistId);
+
+        if (user.isEmpty() || artist.isEmpty()) {
+            return new Reply(false, "Not found.");
+        } else if (!user.get().getFavouriteTracks().contains(artist.get())) {
+            return new Reply(false, "Artist in favourites.");
+        } else {
+            user.get().getFavouriteTracks().remove(artist.get());
+            return new Reply(true, "Artist successfully added to favourites.");
+        }
+    }
 }
