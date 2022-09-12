@@ -42,6 +42,9 @@ public class TrackService {
         return trackRepository.findByArtistId(id);
     }
 
-    public List<Track> getFavoriteTracksByUserId(Long id) {
-        return userRepository.findByUserId(id).get().getFavoriteTracks();
+    public List<Track> getFavouriteTracksByUserId(Long id) {
+        return userRepository.findById(id).get().getFavouriteTracks();
     }
+
+    public Track saveTrack()
+}
