@@ -4,9 +4,9 @@ public class Track {
 
     public String name;
     public Artist artist;
-    public boolean length;
+    public double length;
 
-    public Track(String name, Artist artist, boolean length) {
+    public Track(String name, Artist artist, double length) {
         this.name = name;
         this.artist = artist;
         this.length = length;
@@ -28,11 +28,11 @@ public class Track {
         this.artist = artist;
     }
 
-    public boolean isLength() {
+    public double getLength() {
         return length;
     }
 
-    public void setLength(boolean length) {
+    public void setLength(double length) {
         this.length = length;
     }
 

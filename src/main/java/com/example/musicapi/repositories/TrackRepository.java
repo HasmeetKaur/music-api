@@ -7,6 +7,6 @@ import java.util.List;
 
 public interface TrackRepository extends JpaRepository<Track, Long> {
 
-    List<Track> findByArtistId();
-    List<Track> findByAlbumId();
+    List<Track> findByArtistId(Long id);
+    List<Track> findByAlbumId(Long id);
 }
