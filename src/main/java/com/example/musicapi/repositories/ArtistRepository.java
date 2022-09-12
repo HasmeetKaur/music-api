@@ -1,4 +1,12 @@
 package com.example.musicapi.repositories;
 
-public interface ArtistRepository {
+import com.example.musicapi.models.Artist;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
+
+public interface ArtistRepository extends JpaRepository<Artist, Long> {
+
+    List<Artist> findByTrackId();
+    List<Artist> findByAlbumId();
 }
