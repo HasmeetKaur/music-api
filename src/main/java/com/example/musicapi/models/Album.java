@@ -85,4 +85,6 @@ public class Album {
     public void setTracks(List<Track> tracks) {
         this.tracks = tracks;
     }
+
+
 }
