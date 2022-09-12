@@ -36,8 +36,10 @@ public class AlbumService {
     }
 
     public List<Album> getFavouriteAlbumsByUserId(long id) {
-        return userRepository.findByUserID(id).get().getFavouriteTracks();
+        return albumRepository.findByUserId(id);
     }
+
+    
 }
 
 
