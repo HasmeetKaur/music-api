@@ -12,12 +12,8 @@ import java.util.Optional;
 
 public class AlbumService {
 
-
     @Autowired
     AlbumRepository albumRepository;
-
-    @Autowired
-    UserRepository userRepository;
 
     public List<Album> getAllAlbums() {
         return albumRepository.findAll();
