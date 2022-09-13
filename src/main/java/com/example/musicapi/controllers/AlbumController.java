@@ -21,6 +21,7 @@ public class AlbumController {
     AlbumService albumService;
 
 
+
     @GetMapping
     public ResponseEntity<List<Album>> getAllAlbums(){
         List<Album> albums = albumService.getAllAlbums();
@@ -32,19 +33,22 @@ public class AlbumController {
         return albumService.getAlbumById(id).isPresent() ? new ResponseEntity<>(albumService.getAlbumById(id).get(), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping
+    @GetMapping(value = "/genre")
     public ResponseEntity<List<Album>> getAlbumsByGenre(@PathVariable Genre genre){
-        return albumService.equals(getAlbumsByGenre(genre)) ? new ResponseEntity<>(albumService.getAlbumsByGenre(genre), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        List<Album> albums = albumService.getAlbumsByGenre(genre);
+        return new ResponseEntity<>(albums, HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping(value = "/artist")
     public ResponseEntity<List<Album>> getAlbumsByArtist(@PathVariable Artist artist){
-        return albumService.equals(getAlbumsByArtist(artist)) ? new ResponseEntity<>(albumService.getAlbumsByArtist(artist), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        List<Album> albums = albumService.getAlbumsByArtist(artist);
+        return new ResponseEntity<>(albums, HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping(value = "/{userId}/favourites")
     public ResponseEntity<List<Album>> getFavouriteAlbumsByUserId(@PathVariable Long id){
-        return albumService.equals(getFavouriteAlbumsByUserId(id)) ? new ResponseEntity<>(albumService.getFavouriteAlbumsByUserId(id), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        List<Album> albums = albumService.getFavouriteAlbumsByUserId(id);
+        return new ResponseEntity<>(albums, HttpStatus.OK);
     }
 
     @PostMapping
@@ -53,13 +57,13 @@ public class AlbumController {
         return new ResponseEntity<>(album, HttpStatus.CREATED);
     }
 
-    @PostMapping
-    public ResponseEntity<Optional<Album>> searchAlbumByName(@RequestBody String name) {
+    @GetMapping(value = "/search/{name}")
+    public ResponseEntity<Optional<Album>> searchAlbumByName(@PathVariable String name) {
         Optional<Album> album = albumService.searchAlbumByName(name);
-        return new ResponseEntity<>(album, HttpStatus.CREATED);
+        return album.isPresent()? new ResponseEntity<>(album, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @DeleteMapping(value = "/albums/{albumId}")
+    @DeleteMapping(value = "/{albumId}")
     public ResponseEntity<String> removeAlbumById(@PathVariable long albumId) {
         Reply reply = albumService.removeAlbumById(albumId);
         return reply.isPassed() ? new ResponseEntity<>(reply.getMessage(), HttpStatus.OK) : new ResponseEntity<>(reply.getMessage(), HttpStatus.NOT_FOUND);

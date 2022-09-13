@@ -13,12 +13,20 @@ public class AlbumService {
     @Autowired
     AlbumRepository albumRepository;
 
+    @Autowired
+    UserRepository userRepository;
+
     public List<Album> getAllAlbums() {
         return albumRepository.findAll();
     }
 
     public Optional<Album> getAlbumById(long id) {
-        return albumRepository.findById(id);
+        Optional<Album> album = albumRepository.findById(id);
+        if (album.isEmpty()) {
+            return null;
+        } else {
+            return album;
+        }
     }
 
     public List<Album> getAlbumsByGenre(Genre genre) {
@@ -30,7 +38,12 @@ public class AlbumService {
     }
 
     public List<Album> getFavouriteAlbumsByUserId(long id) {
-        return albumRepository.findByUserId(id);
+        Optional<User> user = userRepository.findById(id);
+        if (user.isEmpty()) {
+            return null;
+        } else {
+            return user.get().getFavouriteAlbums();
+        }
     }
 
     public Album saveAlbum(Album album) {
@@ -49,7 +62,7 @@ public class AlbumService {
     }
 
     public Optional<Album> searchAlbumByName(String name) {
-        return albumRepository.searchAlbumByName(name);
+        return albumRepository.findByName(name);
 
     }
 }
