@@ -14,7 +14,7 @@ import java.util.Optional;
 import static org.apache.logging.log4j.ThreadContext.isEmpty;
 
 @RestController
-@RequestMapping(varlue = "/albums")
+@RequestMapping(value = "/albums")
 public class AlbumController {
 
     @Autowired
