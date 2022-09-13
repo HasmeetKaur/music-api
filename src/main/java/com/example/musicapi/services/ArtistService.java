@@ -2,6 +2,7 @@ package com.example.musicapi.services;
 
 import com.example.musicapi.models.*;
 import com.example.musicapi.repositories.ArtistRepository;
+import com.example.musicapi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import java.util.List;
 import java.util.Optional;
@@ -11,7 +12,10 @@ public class ArtistService {
     @Autowired
     ArtistRepository artistRepository;
 
-    public List<Artist> getAllArtist() {
+    @Autowired
+    UserRepository userRepository;
+
+    public List<Artist> getAllArtists() {
         return artistRepository.findAll();
     }
 
@@ -19,19 +23,23 @@ public class ArtistService {
         return artistRepository.findById(id);
     }
 
-    public List<Artist> getArtistByGenre(Genre genre) {
+    public List<Artist> getArtistsByGenre(Genre genre) {
         return artistRepository.findByGenre(genre);
     }
 
     public List<Artist> getFavouriteArtistsByUserId(long id) {
-        return artistRepository.findFavouriteArtistsByUserId(id);
+        Optional<User> user = userRepository.findById(id);
+        if (user.isEmpty()) {
+            return null;
+        } else {
+            return user.get().getFavouriteArtists();
+        }
     }
 
     public Artist saveArtist(Artist artist) {
         artistRepository.save(artist);
         return artist;
     }
-
 
     public Reply removeArtistById(Long id) {
         Optional<Artist> artist = artistRepository.findById(id);
@@ -44,6 +52,6 @@ public class ArtistService {
     }
 
     public Optional<Artist> searchArtistByName(String name) {
-        return artistRepository.searchArtistByName(name);
+        return artistRepository.findByName(name);
     }
 }

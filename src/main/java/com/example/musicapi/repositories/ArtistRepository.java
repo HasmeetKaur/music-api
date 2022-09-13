@@ -13,15 +13,8 @@ public interface ArtistRepository extends JpaRepository<Artist, Long> {
     List<Artist> findByAlbumId(Long id);
 
     List<Artist> findByUserId();
-    
-    List<Artist> findById();
+
     List<Artist> findByGenre(Genre genre);
 
-    List<Artist> findFavouriteArtistsByUserId(long id);
-
-    Artist saveArtist(Artist artist);
-
-    Optional<Artist> removeArtistById(long id);
-
-    Optional<Artist> searchArtistByName(String name);
+    Optional<Artist> findByName(String name);
 }

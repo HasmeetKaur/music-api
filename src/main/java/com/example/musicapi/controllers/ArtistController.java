@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
-
 @RestController
 @RequestMapping(value = "/artists")
 public class ArtistController {
@@ -20,7 +19,7 @@ public class ArtistController {
 
     @GetMapping
     public ResponseEntity<List<Artist>> getAllArtists(){
-        return new ResponseEntity<>(artistService.getAllArtist(), HttpStatus.OK);
+        return new ResponseEntity<>(artistService.getAllArtists(), HttpStatus.OK);
     }
 
     @GetMapping(value = "/{id}")
@@ -30,13 +29,18 @@ public class ArtistController {
 
     // ERROR - need to find notation for enum
     @GetMapping(value = "/{genre}")
-    public ResponseEntity<List<Artist>> getArtistByGenre(@PathVariable Genre genre) {
-        return artistService.equals(getArtistByGenre(genre)) ? new ResponseEntity<>(artistService.getArtistByGenre(genre), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+    public ResponseEntity<List<Artist>> getArtistsByGenre(@PathVariable Genre genre) {
+        return new ResponseEntity<>(artistService.getArtistsByGenre(genre), HttpStatus.OK);
     }
 
-    @GetMapping
-    public ResponseEntity<List<Artist>> getFavouriteArtistByUserId(@PathVariable Long id){
-        return artistService.equals(getFavouriteArtistByUserId(id)) ? new ResponseEntity<>(artistService.getFavouriteArtistsByUserId(id), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+    @GetMapping(value = "/favourites/{id}")
+    public ResponseEntity<List<Artist>> getFavouriteArtistsByUserId(@PathVariable Long id){
+        List<Artist> favouriteArtists = artistService.getFavouriteArtistsByUserId(id);
+        if (favouriteArtists == null) {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(favouriteArtists, HttpStatus.OK);
+        }
     }
 
     @PostMapping
@@ -45,10 +49,11 @@ public class ArtistController {
         return new ResponseEntity<>(artist, HttpStatus.CREATED);
     }
 
-    @PostMapping
-    public ResponseEntity<Optional<Artist>> searchArtistByName(@RequestBody String name) {
+    @GetMapping(value = "/search/{name}")
+    public ResponseEntity<Optional<Artist>> searchArtistByName(@PathVariable String name) {
         Optional<Artist> artist = artistService.searchArtistByName(name);
-        return new ResponseEntity<>(artist, HttpStatus.CREATED);
+
+        return artist.isPresent()? new ResponseEntity<>(artist, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping(value = "/artists/{artistsId}")
