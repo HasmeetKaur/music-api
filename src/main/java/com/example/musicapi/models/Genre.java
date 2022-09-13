@@ -1,20 +1,20 @@
 package com.example.musicapi.models;
 
 public enum Genre {
+    JAZZ("Jazz"),
+    ROCK("Rock"),
     BLUES("Blues"),
     COUNTRY("Country"),
-    CONTEMPORARY("Contemporary"),
+    CLASSICAL("Classical"),
     ELECTRONIC("Electronic"),
-    FOLK("Folk"),
     HIPHOP("Hip-hop"),
-    JAZZ("Jazz"),
-    POP("Pop"),
-    FUNK("Funk"),
-    RNB("RnB"),
-    SOUL("Soul"),
-    ROCK("Rock"),
     METAL("Metal"),
-    ALTERNATIVE("Alternative");
+    ALTERNATIVE("Alternative"),
+    SOUL("Soul"),
+    RNB("RnB"),
+    FOLK("Folk"),
+    POP("Pop"),
+    FUNK("Funk");
 
     private String value;
 
@@ -30,3 +30,4 @@ public enum Genre {
         this.value = value;
     }
 }
+
