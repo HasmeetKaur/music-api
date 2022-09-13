@@ -65,7 +65,7 @@ public class AlbumController {
         return new ResponseEntity<>(album, HttpStatus.CREATED);
     }
 
-    @DeleteMapping(value = "/{userId}/albums/{albumId}")
+    @DeleteMapping(value = "/albums/{albumId}")
     public ResponseEntity<String> removeAlbumById(@PathVariable long albumId) {
         Reply reply = albumService.removeAlbumById(albumId);
         return reply.isPassed() ? new ResponseEntity<>(reply.getMessage(), HttpStatus.OK) : new ResponseEntity<>(reply.getMessage(), HttpStatus.NOT_FOUND);
