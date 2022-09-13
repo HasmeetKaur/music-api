@@ -17,9 +17,9 @@ public interface ArtistRepository extends JpaRepository<Artist, Long> {
     List<Artist> findById();
     List<Artist> findByGenre(Genre genre);
 
-    List<Artist> findFavouriteArtistByUserId(long id);
+    List<Artist> findFavouriteArtistsByUserId(long id);
 
-    List<Artist> saveArtist(Artist artist);
+    Artist saveArtist(Artist artist);
 
     Optional<Artist> removeArtistById(long id);
 

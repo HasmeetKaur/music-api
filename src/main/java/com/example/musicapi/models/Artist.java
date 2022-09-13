@@ -1,11 +1,13 @@
 package com.example.musicapi.models;
 
+import ch.qos.logback.classic.util.LogbackMDCAdapter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import javax.sound.midi.Track;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Entity(name = "artists")
 public class Artist {
@@ -82,4 +84,7 @@ public class Artist {
     public void setTracks(List<Track> tracks) {
         this.tracks = tracks;
     }
+
+
+
 }

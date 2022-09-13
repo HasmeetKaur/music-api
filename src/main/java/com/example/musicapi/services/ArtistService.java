@@ -1,10 +1,8 @@
 package com.example.musicapi.services;
 
-import com.example.musicapi.models.Artist;
-import com.example.musicapi.models.Genre;
+import com.example.musicapi.models.*;
 import com.example.musicapi.repositories.ArtistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -25,16 +23,24 @@ public class ArtistService {
         return artistRepository.findByGenre(genre);
     }
 
-    public List<Artist> getFavouriteArtistByUserId(long id) {
-        return artistRepository.findFavouriteArtistByUserId(id);
+    public List<Artist> getFavouriteArtistsByUserId(long id) {
+        return artistRepository.findFavouriteArtistsByUserId(id);
     }
 
-    public List<Artist> saveArtist(Artist artist) {
-        return artistRepository.saveArtist(artist);
+    public Artist saveArtist(Artist artist) {
+        artistRepository.save(artist);
+        return artist;
     }
 
-    public Optional<Artist> removeArtistById(long id) {
-        return artistRepository.removeArtistById(id);
+
+    public Reply removeArtistById(Long id) {
+        Optional<Artist> artist = artistRepository.findById(id);
+        if (artist.isEmpty()) {
+            return new Reply(false, "Artist not found.");
+        } else {
+            artistRepository.delete(artist.get());
+            return new Reply(true, "Artist successfully removed by id.");
+        }
     }
 
     public Optional<Artist> searchArtistByName(String name) {
