@@ -90,5 +90,27 @@ public class DataLoader implements ApplicationRunner {
         liveInCookCountyJail.getTracks().add(track23);
         liveInCookCountyJail.getTracks().add(track24);
 
+
+        Artist dollyParton = new Artist("Dolly Parton", Genre.COUNTRY);
+        Track track25 = new Track("Star of the Show", dollyParton, Genre.COUNTRY, 3.56);
+        Track track26 = new Track("Down", dollyParton, Genre.COUNTRY,3.35);
+        Track track27 = new Track("You're The Only One", dollyParton, Genre.COUNTRY, 3.21);
+        Track track28 = new Track("Help", dollyParton, Genre.COUNTRY,2.45);
+        Track track29 = new Track("Do You Think That Time Stands Still?", dollyParton, Genre.COUNTRY,3.56);
+        Track track30 = new Track("Sweet Summer Lovin'", dollyParton, Genre.COUNTRY,3.17);
+        Track track31 = new Track("Great Balls of Fire", dollyParton, Genre.COUNTRY,3.51);
+        Track track32 = new Track("Almost in Love", dollyParton, Genre.COUNTRY,3.16);
+        Track track33 = new Track("It's Not My Affair Anymore", dollyParton, Genre.COUNTRY,3.17);
+        Track track34 = new Track("Sandy's Song", dollyParton, Genre.COUNTRY,3.19);
+
+        Album greatBallsOfFire = new Album("Great Balls of Fire", dollyParton, 1979, Genre.COUNTRY);
+        liveInCookCountyJail.getTracks().add(track17);
+        liveInCookCountyJail.getTracks().add(track18);
+        liveInCookCountyJail.getTracks().add(track19);
+        liveInCookCountyJail.getTracks().add(track20);
+        liveInCookCountyJail.getTracks().add(track21);
+        liveInCookCountyJail.getTracks().add(track22);
+        liveInCookCountyJail.getTracks().add(track23);
+        liveInCookCountyJail.getTracks().add(track24);
     }
 }
