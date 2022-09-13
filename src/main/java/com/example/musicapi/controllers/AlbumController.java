@@ -31,6 +31,12 @@ public class AlbumController {
         return albumService.getAlbumById(id).isPresent() ? new ResponseEntity<>(albumService.getAlbumById(id).get(), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
+    @GetMapping(value = "/track/{id}")
+    public ResponseEntity<Album> getAlbumByTrackId(@PathVariable Long id) {
+        Album album = albumService.getAlbumByTrackId(id);
+        return album != null ? new ResponseEntity<>(album, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+    }
+
     @GetMapping(value = "/genre")
     public ResponseEntity<List<Album>> getAlbumsByGenre(@PathVariable Genre genre){
         List<Album> albums = albumService.getAlbumsByGenre(genre);
