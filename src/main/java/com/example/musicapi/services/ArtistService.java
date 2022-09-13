@@ -4,9 +4,12 @@ import com.example.musicapi.models.*;
 import com.example.musicapi.repositories.ArtistRepository;
 import com.example.musicapi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ArtistService {
 
     @Autowired

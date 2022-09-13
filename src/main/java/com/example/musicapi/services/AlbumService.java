@@ -4,10 +4,12 @@ import com.example.musicapi.models.*;
 import com.example.musicapi.repositories.AlbumRepository;
 import com.example.musicapi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class AlbumService {
 
     @Autowired
@@ -29,14 +31,14 @@ public class AlbumService {
         }
     }
 
-    public Album getAlbumByTrackId(long id) {
-        Optional<Album> album = albumRepository.findByTrackId(id);
-        if (album.isEmpty()) {
-            return null;
-        } else {
-            return album.get();
-        }
-    }
+//    public Album getAlbumByTrackId(long id) {
+//        Optional<Album> album = albumRepository.findByTrackId(id);
+//        if (album.isEmpty()) {
+//            return null;
+//        } else {
+//            return album.get();
+//        }
+//    }
 
     public List<Album> getAlbumsByGenre(Genre genre) {
         return albumRepository.findByGenre(genre);

@@ -44,11 +44,11 @@ public class TrackController {
         return tracks != null ? new ResponseEntity<>(tracks, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping(value = "/album/{id}")
-    public ResponseEntity<List<Track>> getTracksByAlbumId(@PathVariable long id){
-        List<Track> tracks = trackService.getTracksByAlbumId(id);
-        return tracks != null ? new ResponseEntity<>(tracks, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-    }
+//    @GetMapping(value = "/album/{id}")
+//    public ResponseEntity<List<Track>> getTracksByAlbumId(@PathVariable long id){
+//        List<Track> tracks = trackService.getTracksByAlbumId(id);
+//        return tracks != null ? new ResponseEntity<>(tracks, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+//    }
 
     @GetMapping(value = "/favourites/{id}")
     public ResponseEntity<List<Track>> getFavouriteTracksByUserId(@PathVariable Long id){

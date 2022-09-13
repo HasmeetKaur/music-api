@@ -34,14 +34,14 @@ public class TrackService {
         }
     }
 
-    public List<Track> getTracksByAlbumId(Long id) {
-        Optional<List<Track>> tracks = trackRepository.findByAlbumId(id);
-        if (tracks.isEmpty()) {
-            return null;
-        } else {
-            return tracks.get();
-        }
-    }
+//    public List<Track> getTracksByAlbumId(Long id) {
+//        Optional<List<Track>> tracks = trackRepository.findByAlbumId(id);
+//        if (tracks.isEmpty()) {
+//            return null;
+//        } else {
+//            return tracks.get();
+//        }
+//    }
 
     public List<Track> getTracksByGenre(Genre genre) {
         return trackRepository.findByGenre(genre);
