@@ -32,19 +32,19 @@ public class TrackController {
         }
     }
 
-    @GetMapping
+    @GetMapping(value = "/genre")
     public ResponseEntity<List<Track>> getAlbumsByGenre(@PathVariable Genre genre){
         List<Track> tracks = trackService.getTracksByGenre(genre);
         return new ResponseEntity<>(tracks, HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping(value = "artist")
     public ResponseEntity<List<Track>> getTracksByArtist(@PathVariable Artist artist){
         List<Track> tracks = trackService.getTracksByArtist(artist.getId());
         return new ResponseEntity<>(tracks, HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping(value = "favourites/{id}")
     public ResponseEntity<List<Track>> getFavouriteTracksByUserId(@PathVariable Long id){
         List<Track> tracks = trackService.getFavouriteTracksByUserId(id);
         return new ResponseEntity<>(tracks, HttpStatus.OK);
@@ -56,15 +56,15 @@ public class TrackController {
         return new ResponseEntity<>(track, HttpStatus.CREATED);
     }
 
-    @PostMapping
-    public ResponseEntity<Optional<Track>> searchTrackByName(@RequestBody String name) {
+    @GetMapping(value = "/search/{name}")
+    public ResponseEntity<Optional<Track>> searchTrackByName(@PathVariable String name) {
         Optional<Track> track = trackService.searchTrackByName(name);
-        return new ResponseEntity<>(track, HttpStatus.CREATED);
+        return track.isPresent() ? new ResponseEntity<>(track, HttpStatus.CREATED) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @DeleteMapping(value = "/tracks/{trackId}")
-    public ResponseEntity<String> removeTrackById(@PathVariable long trackId) {
-        Reply reply = trackService.removeTrackById(trackId);
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<String> removeTrackById(@PathVariable long id) {
+        Reply reply = trackService.removeTrackById(id);
         return reply.isPassed() ? new ResponseEntity<>(reply.getMessage(), HttpStatus.OK) : new ResponseEntity<>(reply.getMessage(), HttpStatus.NOT_FOUND);
     }
 

@@ -71,7 +71,7 @@ public class TrackService {
     }
 
     public Optional<Track> searchTrackByName(String name) {
-        return trackRepository.searchTrackByName(name);
+        return trackRepository.findByName(name);
 
     }
 

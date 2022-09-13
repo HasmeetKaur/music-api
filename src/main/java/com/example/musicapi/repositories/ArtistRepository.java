@@ -9,11 +9,6 @@ import java.util.Optional;
 
 public interface ArtistRepository extends JpaRepository<Artist, Long> {
 
-    List<Artist> findByTrackId(Long id);
-    List<Artist> findByAlbumId(Long id);
-
-    List<Artist> findByUserId();
-
     List<Artist> findByGenre(Genre genre);
 
     Optional<Artist> findByName(String name);

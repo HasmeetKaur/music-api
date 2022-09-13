@@ -56,9 +56,9 @@ public class ArtistController {
         return artist.isPresent()? new ResponseEntity<>(artist, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @DeleteMapping(value = "/artists/{artistsId}")
-    public ResponseEntity<String> removeArtistById(@PathVariable long artistId) {
-        Reply reply = artistService.removeArtistById(artistId);
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<String> removeArtistById(@PathVariable long id) {
+        Reply reply = artistService.removeArtistById(id);
         return reply.isPassed() ? new ResponseEntity<>(reply.getMessage(), HttpStatus.OK) : new ResponseEntity<>(reply.getMessage(), HttpStatus.NOT_FOUND);
     }
 
