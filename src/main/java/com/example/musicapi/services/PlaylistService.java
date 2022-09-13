@@ -25,20 +25,26 @@ public class PlaylistService {
     @Autowired
     UserRepository userRepository;
 
-    public List<Playlist> getAllUsersPlaylistsById(long id) {
+    public List<Playlist> getAllPlaylists() {
+        return playlistRepository.findAll();
+    }
+
+    public Optional<List<Playlist>> getAllUsersPlaylistsById(long id) {
         return playlistRepository.findByUserId(id);
     }
 
     public Playlist getUsersPlaylistById(long userId, long playlistId) {
-        List<Playlist> playlists = playlistRepository.findByUserId(userId);
+        Optional<List<Playlist>> playlists = playlistRepository.findByUserId(userId);
 
         Playlist playlistToReturn = null;
+        if (playlists.isPresent()) {
+            for(Playlist playlist : playlists.get()) {
+                if (playlist.getId() == playlistId) {
+                    playlistToReturn = playlist;
+                }
+            };
+        }
 
-        for(Playlist playlist : playlists) {
-            if (playlist.getId() == playlistId) {
-                playlistToReturn = playlist;
-            }
-        };
         return playlistToReturn;
     }
 
@@ -72,7 +78,9 @@ public class PlaylistService {
         if (user.isEmpty()) {
             return null;
         } else {
-            return new Playlist(name, user.get());
+            Playlist playlist = new Playlist(name, user.get());
+            playlistRepository.save(playlist);
+            return playlist;
         }
     }
 
