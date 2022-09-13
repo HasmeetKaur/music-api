@@ -33,8 +33,13 @@ public class AlbumService {
         return albumRepository.findByGenre(genre);
     }
 
-    public List<Album> getAlbumsByArtist(Artist artist) {
-        return albumRepository.findByArtist(artist);
+    public List<Album> getAlbumsByArtistId(Long id) {
+        Optional<List<Album>> albums = albumRepository.findByArtistId(id);
+        if (albums.isPresent()) {
+            return albums.get();
+        } else {
+            return null;
+        }
     }
 
     public List<Album> getFavouriteAlbumsByUserId(long id) {

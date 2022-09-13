@@ -20,8 +20,6 @@ public class AlbumController {
     @Autowired
     AlbumService albumService;
 
-
-
     @GetMapping
     public ResponseEntity<List<Album>> getAllAlbums(){
         List<Album> albums = albumService.getAllAlbums();
@@ -39,10 +37,10 @@ public class AlbumController {
         return new ResponseEntity<>(albums, HttpStatus.OK);
     }
 
-    @GetMapping(value = "/artist")
-    public ResponseEntity<List<Album>> getAlbumsByArtist(@PathVariable Artist artist){
-        List<Album> albums = albumService.getAlbumsByArtist(artist);
-        return new ResponseEntity<>(albums, HttpStatus.OK);
+    @GetMapping(value = "/artist/{id}")
+    public ResponseEntity<List<Album>> getAlbumsByArtistId(@PathVariable long id){
+        List<Album> albums = albumService.getAlbumsByArtistId(id);
+        return albums != null ? new ResponseEntity<>(albums, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping(value = "/{userId}/favourites")
@@ -63,9 +61,9 @@ public class AlbumController {
         return album.isPresent()? new ResponseEntity<>(album, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @DeleteMapping(value = "/{albumId}")
-    public ResponseEntity<String> removeAlbumById(@PathVariable long albumId) {
-        Reply reply = albumService.removeAlbumById(albumId);
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<String> removeAlbumById(@PathVariable long id) {
+        Reply reply = albumService.removeAlbumById(id);
         return reply.isPassed() ? new ResponseEntity<>(reply.getMessage(), HttpStatus.OK) : new ResponseEntity<>(reply.getMessage(), HttpStatus.NOT_FOUND);
     }
 

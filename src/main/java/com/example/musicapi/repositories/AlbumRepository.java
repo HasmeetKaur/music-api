@@ -10,14 +10,12 @@ import java.util.Optional;
 
 public interface AlbumRepository extends JpaRepository<Album, Long> {
 
-    List<Album> findByArtistId(Long id);
+    Optional<List<Album>> findByArtistId(Long id);
     List<Album> findByTrackId(Long id);
 
     List<Album> findByGenre(Genre genre);
 
-    List<Album> findByArtist(Artist artist);
-
-    List<Album> findByUserId(long id);
+    List<Album> findByUserId(Long id);
 
     Optional<Album> findByName(String name);
 }

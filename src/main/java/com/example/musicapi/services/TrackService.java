@@ -15,15 +15,6 @@ public class TrackService {
     TrackRepository trackRepository;
 
     @Autowired
-    AlbumRepository albumRepository;
-
-    @Autowired
-    ArtistRepository artistRepository;
-
-    @Autowired
-    PlaylistRepository playlistRepository;
-
-    @Autowired
     UserRepository userRepository;
 
     public List<Track> getAllTracks() {
@@ -34,12 +25,22 @@ public class TrackService {
         return trackRepository.findById(id);
     }
 
-    public List<Track> getTracksByArtist(Long id) {
-        return trackRepository.findByArtistId(id);
+    public List<Track> getTracksByArtistId(Long id) {
+        Optional<List<Track>> tracks = trackRepository.findByArtistId(id);
+        if (tracks.isEmpty()) {
+            return null;
+        } else {
+            return tracks.get();
+        }
     }
 
-    public List<Track> getTrackByAlbumId(Long id) {
-        return trackRepository.findByAlbumId(id);
+    public List<Track> getTracksByAlbumId(Long id) {
+        Optional<List<Track>> tracks = trackRepository.findByAlbumId(id);
+        if (tracks.isEmpty()) {
+            return null;
+        } else {
+            return tracks.get();
+        }
     }
 
     public List<Track> getTracksByGenre(Genre genre) {

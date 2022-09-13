@@ -9,9 +9,8 @@ import java.util.Optional;
 
 public interface TrackRepository extends JpaRepository<Track, Long> {
 
-    List<Track> findByArtistId(Long id);
-    List<Track> findByAlbumId(Long id);
+    Optional<List<Track>> findByArtistId(Long id);
+    Optional<List<Track>> findByAlbumId(Long id);
     List<Track> findByGenre(Genre genre);
-    List<Track> findByUserId(long id);
     Optional<Track> findByName (String name);
 }

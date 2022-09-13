@@ -26,7 +26,7 @@ public class Playlist {
     @JoinColumn(name = "track_id")
     private List<Track> tracks;
 
-    //instantiation
+    //constructor
     public Playlist(String name, User user){
         this.name = name;
         this.user = user;

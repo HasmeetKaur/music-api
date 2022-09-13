@@ -31,7 +31,7 @@ public class Artist {
     @JsonIgnoreProperties({"artist"})
     private List<Track> tracks;
 
-    //instantiation
+    //constructor
     public Artist(String name, Genre genre){
         this.name = name;
         this.genre = genre;

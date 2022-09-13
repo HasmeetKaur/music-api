@@ -33,18 +33,24 @@ public class TrackController {
     }
 
     @GetMapping(value = "/genre")
-    public ResponseEntity<List<Track>> getAlbumsByGenre(@PathVariable Genre genre){
+    public ResponseEntity<List<Track>> getTracksByGenre(@PathVariable Genre genre){
         List<Track> tracks = trackService.getTracksByGenre(genre);
         return new ResponseEntity<>(tracks, HttpStatus.OK);
     }
 
-    @GetMapping(value = "artist")
-    public ResponseEntity<List<Track>> getTracksByArtist(@PathVariable Artist artist){
-        List<Track> tracks = trackService.getTracksByArtist(artist.getId());
-        return new ResponseEntity<>(tracks, HttpStatus.OK);
+    @GetMapping(value = "/artist/{id}")
+    public ResponseEntity<List<Track>> getTracksByArtistId(@PathVariable long id){
+        List<Track> tracks = trackService.getTracksByArtistId(id);
+        return tracks != null ? new ResponseEntity<>(tracks, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping(value = "favourites/{id}")
+    @GetMapping(value = "/album/{id}")
+    public ResponseEntity<List<Track>> getTracksByAlbumId(@PathVariable long id){
+        List<Track> tracks = trackService.getTracksByAlbumId(id);
+        return tracks != null ? new ResponseEntity<>(tracks, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping(value = "/favourites/{id}")
     public ResponseEntity<List<Track>> getFavouriteTracksByUserId(@PathVariable Long id){
         List<Track> tracks = trackService.getFavouriteTracksByUserId(id);
         return new ResponseEntity<>(tracks, HttpStatus.OK);

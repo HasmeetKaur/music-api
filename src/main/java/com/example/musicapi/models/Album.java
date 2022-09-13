@@ -12,7 +12,7 @@ public class Album {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    @Column(name = "word")
+    @Column(name = "name")
     private String name;
 
     @ManyToOne
