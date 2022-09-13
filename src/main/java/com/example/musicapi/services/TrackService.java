@@ -47,7 +47,12 @@ public class TrackService {
     }
 
     public List<Track> getFavouriteTracksByUserId(long id) {
-        return trackRepository.findByUserId(id);
+        Optional<User> user = userRepository.findById(id);
+        if (user.isEmpty()) {
+            return null;
+        } else {
+            return user.get().getFavouriteTracks();
+        }
     }
 
     public Track saveTrack(Track track) {
