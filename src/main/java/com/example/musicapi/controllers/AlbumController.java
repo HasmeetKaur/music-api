@@ -11,8 +11,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+import static org.apache.logging.log4j.ThreadContext.isEmpty;
+
 @RestController
-@RequestMapping(value = "/games")
+@RequestMapping(value = "/albums")
 public class AlbumController {
 
     @Autowired
@@ -27,30 +29,22 @@ public class AlbumController {
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Album> getAlbumById(@PathVariable Long id){
-        Optional<Album> album = albumService.getAlbumById(id);
-        if (album.isPresent()){
-            return new ResponseEntity<>(album.get(), HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-        }
+        return albumService.getAlbumById(id).isPresent() ? new ResponseEntity<>(albumService.getAlbumById(id).get(), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping
     public ResponseEntity<List<Album>> getAlbumsByGenre(@PathVariable Genre genre){
-        List<Album> albums = albumService.getAlbumsByGenre(genre);
-        return new ResponseEntity<>(albums, HttpStatus.OK);
+        return albumService.equals(getAlbumsByGenre(genre)) ? new ResponseEntity<>(albumService.getAlbumsByGenre(genre), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping
     public ResponseEntity<List<Album>> getAlbumsByArtist(@PathVariable Artist artist){
-        List<Album> albums = albumService.getAlbumsByArtist(artist);
-        return new ResponseEntity<>(albums, HttpStatus.OK);
+        return albumService.equals(getAlbumsByArtist(artist)) ? new ResponseEntity<>(albumService.getAlbumsByArtist(artist), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @GetMapping
     public ResponseEntity<List<Album>> getFavouriteAlbumsByUserId(@PathVariable Long id){
-        List<Album> albums = albumService.getFavouriteAlbumsByUserId(id);
-        return new ResponseEntity<>(albums, HttpStatus.OK);
+        return albumService.equals(getFavouriteAlbumsByUserId(id)) ? new ResponseEntity<>(albumService.getFavouriteAlbumsByUserId(id), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @PostMapping
