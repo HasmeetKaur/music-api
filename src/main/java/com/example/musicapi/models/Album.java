@@ -3,7 +3,6 @@ package com.example.musicapi.models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import javax.sound.midi.Track;
 import java.util.ArrayList;
 import java.util.List;
 
