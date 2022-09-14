@@ -50,10 +50,10 @@ public class ArtistController {
     }
 
     @GetMapping(value = "/search/{name}")
-    public ResponseEntity<Optional<Artist>> searchArtistByName(@PathVariable String name) {
-        Optional<Artist> artist = artistService.searchArtistByName(name);
+    public ResponseEntity<Optional<List<Artist>>> searchArtistByName(@PathVariable String name) {
+        Optional<List<Artist>> artists = artistService.searchArtistByName(name);
 
-        return artist.isPresent()? new ResponseEntity<>(artist, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        return artists.isPresent()? new ResponseEntity<>(artists, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping(value = "/{id}")

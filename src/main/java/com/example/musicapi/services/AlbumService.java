@@ -72,7 +72,7 @@ public class AlbumService {
         }
     }
 
-    public Optional<Album> searchAlbumByName(String name) {
+    public Optional<List<Album>> searchAlbumByName(String name) {
         return albumRepository.findByName(name);
 
     }

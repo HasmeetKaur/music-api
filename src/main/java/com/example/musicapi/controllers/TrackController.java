@@ -63,8 +63,8 @@ public class TrackController {
     }
 
     @GetMapping(value = "/search/{name}")
-    public ResponseEntity<Optional<Track>> searchTrackByName(@PathVariable String name) {
-        Optional<Track> track = trackService.searchTrackByName(name);
+    public ResponseEntity<Optional<List<Track>>> searchTrackByName(@PathVariable String name) {
+        Optional<List<Track>> track = trackService.searchTrackByName(name);
         return track.isPresent() ? new ResponseEntity<>(track, HttpStatus.CREATED) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 

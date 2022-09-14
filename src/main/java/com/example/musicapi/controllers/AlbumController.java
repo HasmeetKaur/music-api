@@ -59,9 +59,9 @@ public class AlbumController {
     }
 
     @GetMapping(value = "/search/{name}")
-    public ResponseEntity<Optional<Album>> searchAlbumByName(@PathVariable String name) {
-        Optional<Album> album = albumService.searchAlbumByName(name);
-        return album.isPresent()? new ResponseEntity<>(album, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+    public ResponseEntity<Optional<List<Album>>> searchAlbumByName(@PathVariable String name) {
+        Optional<List<Album>> albums = albumService.searchAlbumByName(name);
+        return albums.isPresent()? new ResponseEntity<>(albums, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping(value = "/{id}")

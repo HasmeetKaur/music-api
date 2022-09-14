@@ -54,7 +54,7 @@ public class ArtistService {
         }
     }
 
-    public Optional<Artist> searchArtistByName(String name) {
+    public Optional<List<Artist>> searchArtistByName(String name) {
         return artistRepository.findByName(name);
     }
 }
