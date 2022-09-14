@@ -23,12 +23,12 @@ public class ArtistController {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Artist> getArtistById(@PathVariable long id) {
+    public ResponseEntity<Artist> getArtistById(@PathVariable Long id) {
         return artistService.getArtistById(id).isPresent() ? new ResponseEntity<>(artistService.getArtistById(id).get(), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
     // ERROR - need to find notation for enum
-    @GetMapping(value = "/{genre}")
+    @GetMapping(value = "/genre/{genre}")
     public ResponseEntity<List<Artist>> getArtistsByGenre(@PathVariable Genre genre) {
         return new ResponseEntity<>(artistService.getArtistsByGenre(genre), HttpStatus.OK);
     }

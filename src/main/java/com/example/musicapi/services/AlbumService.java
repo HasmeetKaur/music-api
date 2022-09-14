@@ -23,12 +23,7 @@ public class AlbumService {
     }
 
     public Optional<Album> getAlbumById(long id) {
-        Optional<Album> album = albumRepository.findById(id);
-        if (album.isEmpty()) {
-            return null;
-        } else {
-            return album;
-        }
+        return albumRepository.findById(id);
     }
 
 //    public Album getAlbumByTrackId(long id) {

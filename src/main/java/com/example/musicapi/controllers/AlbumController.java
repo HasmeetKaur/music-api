@@ -34,7 +34,7 @@ public class AlbumController {
 //        return album != null ? new ResponseEntity<>(album, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
 //    }
 
-    @GetMapping(value = "/genre")
+    @GetMapping(value = "/genre/{genre}")
     public ResponseEntity<List<Album>> getAlbumsByGenre(@PathVariable Genre genre){
         List<Album> albums = albumService.getAlbumsByGenre(genre);
         return new ResponseEntity<>(albums, HttpStatus.OK);
