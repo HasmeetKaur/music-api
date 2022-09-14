@@ -22,7 +22,7 @@ public class Artist {
     private Genre genre;
 
     @OneToMany(mappedBy = "artist")
-    @JsonIgnoreProperties({"artist"})
+    @JsonIgnoreProperties({"artist", "tracks"})
     private List<Album> albums;
 
     @OneToMany(mappedBy = "artist")

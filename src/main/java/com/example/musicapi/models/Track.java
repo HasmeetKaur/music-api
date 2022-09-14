@@ -16,7 +16,7 @@ public class Track {
 
     @ManyToOne
     @JoinColumn(name = "artist_id")
-    @JsonIgnoreProperties({"tracks"})
+    @JsonIgnoreProperties({"tracks", "albums"})
     public Artist artist;
 
     @Column(name = "genre")

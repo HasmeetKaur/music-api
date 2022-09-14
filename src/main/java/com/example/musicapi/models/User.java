@@ -22,7 +22,7 @@ public class User {
             joinColumns = {@JoinColumn(name = "user_id", nullable = false)},
             inverseJoinColumns = {@JoinColumn(name = "album_id", nullable = false)}
     )
-    @JsonIgnoreProperties({"users"})
+    @JsonIgnoreProperties({"user"})
     private List<Album> favouriteAlbums;
 
     @ManyToMany
@@ -31,7 +31,7 @@ public class User {
             joinColumns = {@JoinColumn(name = "user_id", nullable = false)},
             inverseJoinColumns = {@JoinColumn(name = "artist_id", nullable = false)}
     )
-    @JsonIgnoreProperties({"users"})
+    @JsonIgnoreProperties({"user"})
     private List<Artist> favouriteArtists;
 
     @ManyToMany
@@ -40,7 +40,7 @@ public class User {
             joinColumns = {@JoinColumn(name = "user_id", nullable = false)},
             inverseJoinColumns = {@JoinColumn(name = "track_id", nullable = false)}
     )
-    @JsonIgnoreProperties({"users"})
+    @JsonIgnoreProperties({"user"})
     private List<Track> favouriteTracks;
 
     @OneToMany(mappedBy = "user")

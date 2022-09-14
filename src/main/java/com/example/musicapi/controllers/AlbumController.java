@@ -8,10 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Optional;
-
-import static org.apache.logging.log4j.ThreadContext.isEmpty;
 
 @RestController
 @RequestMapping(value = "/albums")
@@ -49,7 +46,7 @@ public class AlbumController {
         return albums != null ? new ResponseEntity<>(albums, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping(value = "/{userId}/favourites")
+    @GetMapping(value = "/{id}/favourites")
     public ResponseEntity<List<Album>> getFavouriteAlbumsByUserId(@PathVariable Long id){
         List<Album> albums = albumService.getFavouriteAlbumsByUserId(id);
         return new ResponseEntity<>(albums, HttpStatus.OK);
@@ -58,7 +55,7 @@ public class AlbumController {
     @PostMapping
     public ResponseEntity<Album> saveAlbum(@RequestBody Album album) {
         Album newAlbum = albumService.saveAlbum(album);
-        return new ResponseEntity<>(album, HttpStatus.CREATED);
+        return new ResponseEntity<>(newAlbum, HttpStatus.CREATED);
     }
 
     @GetMapping(value = "/search/{name}")

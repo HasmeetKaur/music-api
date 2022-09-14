@@ -17,7 +17,7 @@ public class Album {
 
     @ManyToOne
     @JoinColumn(name = "artist_id")
-    @JsonIgnoreProperties({"albums"})
+    @JsonIgnoreProperties({"albums", "tracks"})
     private Artist artist;
 
     @Column(name = "year")
@@ -27,7 +27,7 @@ public class Album {
     private Genre genre;
 
     @OneToMany
-    @JoinColumn(name = "track_id")
+    @JoinColumn(name = "album_id")
     private List<Track> tracks;
 
     public Album(String name, Artist artist, int year, Genre genre){

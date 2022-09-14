@@ -131,16 +131,16 @@ public class DataLoader implements ApplicationRunner {
         Track track34 = new Track("Sandy's Song", dollyParton, Genre.COUNTRY,3.19);
 
         Album greatBallsOfFire = new Album("Great Balls of Fire", dollyParton, 1979, Genre.COUNTRY);
-        liveInCookCountyJail.getTracks().add(track25);
-        liveInCookCountyJail.getTracks().add(track26);
-        liveInCookCountyJail.getTracks().add(track27);
-        liveInCookCountyJail.getTracks().add(track28);
-        liveInCookCountyJail.getTracks().add(track29);
-        liveInCookCountyJail.getTracks().add(track30);
-        liveInCookCountyJail.getTracks().add(track31);
-        liveInCookCountyJail.getTracks().add(track32);
-        liveInCookCountyJail.getTracks().add(track33);
-        liveInCookCountyJail.getTracks().add(track34);
+        greatBallsOfFire.getTracks().add(track25);
+        greatBallsOfFire.getTracks().add(track26);
+        greatBallsOfFire.getTracks().add(track27);
+        greatBallsOfFire.getTracks().add(track28);
+        greatBallsOfFire.getTracks().add(track29);
+        greatBallsOfFire.getTracks().add(track30);
+        greatBallsOfFire.getTracks().add(track31);
+        greatBallsOfFire.getTracks().add(track32);
+        greatBallsOfFire.getTracks().add(track33);
+        greatBallsOfFire.getTracks().add(track34);
         trackRepository.save(track25);
         trackRepository.save(track26);
         trackRepository.save(track27);
@@ -434,11 +434,6 @@ public class DataLoader implements ApplicationRunner {
         User joao = new User("jp");
         User milo = new User("mc");
 
-        userRepository.save(faizan);
-        userRepository.save(hasmeet);
-        userRepository.save(joao);
-        userRepository.save(milo);
-
         joao.getFavouriteArtists().add(milesDavis);
         joao.getFavouriteTracks().add(track8);
         joao.getFavouriteTracks().add(track9);
@@ -450,7 +445,7 @@ public class DataLoader implements ApplicationRunner {
         joao.getFavouriteTracks().add(track15);
         joao.getFavouriteTracks().add(track16);
 
-        joao.getFavouriteAlbums().add(revolver);
+        joao.getFavouriteAlbums().add(liveInCookCountyJail);
 
         Playlist hasmeetsPlaylist = new Playlist("Hasmeet's favourites", hasmeet);
         hasmeetsPlaylist.getTracks().add(track3);
@@ -459,6 +454,12 @@ public class DataLoader implements ApplicationRunner {
         hasmeetsPlaylist.getTracks().add(track6);
         hasmeetsPlaylist.getTracks().add(track7);
         hasmeetsPlaylist.getTracks().add(track8);
+
+        userRepository.save(faizan);
+        userRepository.save(hasmeet);
+        userRepository.save(joao);
+        userRepository.save(milo);
+
         playlistRepository.save(hasmeetsPlaylist);
     }
 }
