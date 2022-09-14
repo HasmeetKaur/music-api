@@ -15,17 +15,32 @@ public class User {
 
     @Column(name = "user_name")
     private String userName;
-    
-    @OneToMany
-    @JoinColumn(name = "album_id")
+
+    @ManyToMany
+    @JoinTable(
+            name = "favourite_albums",
+            joinColumns = {@JoinColumn(name = "user_id", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "album_id", nullable = false)}
+    )
+    @JsonIgnoreProperties({"users"})
     private List<Album> favouriteAlbums;
 
-    @OneToMany
-    @JoinColumn(name = "artist_id")
+    @ManyToMany
+    @JoinTable(
+            name = "favourite_artists",
+            joinColumns = {@JoinColumn(name = "user_id", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "artist_id", nullable = false)}
+    )
+    @JsonIgnoreProperties({"users"})
     private List<Artist> favouriteArtists;
 
-    @OneToMany
-    @JoinColumn(name = "track_id")
+    @ManyToMany
+    @JoinTable(
+            name = "favourite_tracks",
+            joinColumns = {@JoinColumn(name = "user_id", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "track_id", nullable = false)}
+    )
+    @JsonIgnoreProperties({"users"})
     private List<Track> favouriteTracks;
 
     @OneToMany(mappedBy = "user")

@@ -52,7 +52,7 @@ public class DataLoader implements ApplicationRunner {
         trackRepository.save(track5);
         trackRepository.save(track6);
         trackRepository.save(track7);
-//        albumRepository.save(bagsGroove);
+        albumRepository.save(bagsGroove);
 
         Artist pinkFloyd = new Artist("Pink Floyd", Genre.ROCK);
         artistRepository.save(pinkFloyd);
@@ -76,7 +76,6 @@ public class DataLoader implements ApplicationRunner {
         theDarkSideOfTheMoon.getTracks().add(track14);
         theDarkSideOfTheMoon.getTracks().add(track15);
         theDarkSideOfTheMoon.getTracks().add(track16);
-//        albumRepository.save(theDarkSideOfTheMoon);
         trackRepository.save(track8);
         trackRepository.save(track9);
         trackRepository.save(track10);
@@ -86,6 +85,7 @@ public class DataLoader implements ApplicationRunner {
         trackRepository.save(track14);
         trackRepository.save(track15);
         trackRepository.save(track16);
+        albumRepository.save(theDarkSideOfTheMoon);
 
         Artist bbKing = new Artist("B. B. King", Genre.BLUES);
         artistRepository.save(bbKing);
@@ -107,7 +107,6 @@ public class DataLoader implements ApplicationRunner {
         liveInCookCountyJail.getTracks().add(track22);
         liveInCookCountyJail.getTracks().add(track23);
         liveInCookCountyJail.getTracks().add(track24);
-//        albumRepository.save(liveInCookCountyJail);
         trackRepository.save(track17);
         trackRepository.save(track18);
         trackRepository.save(track19);
@@ -116,6 +115,7 @@ public class DataLoader implements ApplicationRunner {
         trackRepository.save(track22);
         trackRepository.save(track23);
         trackRepository.save(track24);
+        albumRepository.save(liveInCookCountyJail);
 
         Artist dollyParton = new Artist("Dolly Parton", Genre.COUNTRY);
         artistRepository.save(dollyParton);
@@ -141,7 +141,6 @@ public class DataLoader implements ApplicationRunner {
         liveInCookCountyJail.getTracks().add(track32);
         liveInCookCountyJail.getTracks().add(track33);
         liveInCookCountyJail.getTracks().add(track34);
-//        albumRepository.save(greatBallsOfFire);
         trackRepository.save(track25);
         trackRepository.save(track26);
         trackRepository.save(track27);
@@ -152,6 +151,7 @@ public class DataLoader implements ApplicationRunner {
         trackRepository.save(track32);
         trackRepository.save(track33);
         trackRepository.save(track34);
+        albumRepository.save(greatBallsOfFire);
 
         Artist philipGlass = new Artist("Philip Glass", Genre.CLASSICAL);
         artistRepository.save(philipGlass);
@@ -169,13 +169,13 @@ public class DataLoader implements ApplicationRunner {
         glassworks.getTracks().add(track38);
         glassworks.getTracks().add(track39);
         glassworks.getTracks().add(track40);
-//        albumRepository.save(glassworks);
         trackRepository.save(track35);
         trackRepository.save(track36);
         trackRepository.save(track37);
         trackRepository.save(track38);
         trackRepository.save(track39);
         trackRepository.save(track40);
+        albumRepository.save(glassworks);
 
         Artist skeeMask = new Artist("Skee Mask", Genre.ELECTRONIC);
         Track track41 = new Track("Cerroverb", skeeMask, Genre.ELECTRONIC, 5.34);
@@ -402,7 +402,7 @@ public class DataLoader implements ApplicationRunner {
         revolver.getTracks().add(track135);
         revolver.getTracks().add(track136);
         revolver.getTracks().add(track137);
-        
+
         Artist markRonson = new Artist("Mark Ronson", Genre.FUNK);
         Track track138 = new Track("Uptown's First Finale", markRonson, Genre.FUNK, 1.39);
         Track track139 = new Track("Summer Breaking", markRonson, Genre.FUNK, 3.07);
@@ -453,12 +453,12 @@ public class DataLoader implements ApplicationRunner {
         joao.getFavouriteAlbums().add(revolver);
 
         Playlist hasmeetsPlaylist = new Playlist("Hasmeet's favourites", hasmeet);
-        hasmeetsPlaylist.getTracks().add(track113);
-        hasmeetsPlaylist.getTracks().add(track114);
-        hasmeetsPlaylist.getTracks().add(track115);
-        hasmeetsPlaylist.getTracks().add(track116);
-        hasmeetsPlaylist.getTracks().add(track117);
-        hasmeetsPlaylist.getTracks().add(track118);
+        hasmeetsPlaylist.getTracks().add(track3);
+        hasmeetsPlaylist.getTracks().add(track4);
+        hasmeetsPlaylist.getTracks().add(track5);
+        hasmeetsPlaylist.getTracks().add(track6);
+        hasmeetsPlaylist.getTracks().add(track7);
+        hasmeetsPlaylist.getTracks().add(track8);
         playlistRepository.save(hasmeetsPlaylist);
     }
 }

@@ -22,8 +22,12 @@ public class Playlist {
     @JsonIgnoreProperties({"playlists"})
     private User user;
 
-    @OneToMany
-    @JoinColumn(name = "track_id")
+    @ManyToMany
+    @JoinTable(
+            name = "playlists_tracks",
+            joinColumns = {@JoinColumn(name = "playlist_id", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "track_id", nullable = false)}
+    )
     private List<Track> tracks;
 
     //constructor
