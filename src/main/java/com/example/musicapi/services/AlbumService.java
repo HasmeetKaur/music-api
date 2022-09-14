@@ -26,14 +26,14 @@ public class AlbumService {
         return albumRepository.findById(id);
     }
 
-//    public Album getAlbumByTrackId(long id) {
-//        Optional<Album> album = albumRepository.findByTrackId(id);
-//        if (album.isEmpty()) {
-//            return null;
-//        } else {
-//            return album.get();
-//        }
-//    }
+    public Album getAlbumByTrackId(long id) {
+        Optional<Album> album = albumRepository.findByTrackId(id);
+        if (album.isEmpty()) {
+            return null;
+        } else {
+            return album.get();
+        }
+    }
 
     public List<Album> getAlbumsByGenre(Genre genre) {
         return albumRepository.findByGenre(genre);

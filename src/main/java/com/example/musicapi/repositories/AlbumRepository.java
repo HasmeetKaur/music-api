@@ -12,7 +12,9 @@ import java.util.Optional;
 public interface AlbumRepository extends JpaRepository<Album, Long> {
 
     Optional<List<Album>> findByArtistId(Long id);
-//    Optional<Album> findByTrackId(Long id);
+
+    @Query(value = "SELECT al.*n FROM albums al INNER JOIN artists ar ON al.artist_id = ar.id INNER JOIN tracks t ON t.artist_id = ar.id WHERE t.id = :id", nativeQuery = true)
+    Optional<Album> findByTrackId(@Param("id") Long id);
 
     List<Album> findByGenre(Genre genre);
 

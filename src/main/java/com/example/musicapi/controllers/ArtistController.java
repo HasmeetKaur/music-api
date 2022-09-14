@@ -27,7 +27,6 @@ public class ArtistController {
         return artistService.getArtistById(id).isPresent() ? new ResponseEntity<>(artistService.getArtistById(id).get(), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    // ERROR - need to find notation for enum
     @GetMapping(value = "/genre/{genre}")
     public ResponseEntity<List<Artist>> getArtistsByGenre(@PathVariable Genre genre) {
         return new ResponseEntity<>(artistService.getArtistsByGenre(genre), HttpStatus.OK);
