@@ -28,6 +28,7 @@ public class DataLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         Artist milesDavis = new Artist("Miles Davis", Genre.JAZZ);
+        artistRepository.save(milesDavis);
         Track track1 = new Track("Bags' Groove", milesDavis, Genre.JAZZ, 3.00);
         Track track2 = new Track("Bags' Groove - Take 2", milesDavis, Genre.JAZZ, 3.00);
         Track track3 = new Track("Airegin", milesDavis, Genre.JAZZ, 3.00);
@@ -44,8 +45,17 @@ public class DataLoader implements ApplicationRunner {
         bagsGroove.getTracks().add(track5);
         bagsGroove.getTracks().add(track6);
         bagsGroove.getTracks().add(track7);
+        trackRepository.save(track1);
+        trackRepository.save(track2);
+        trackRepository.save(track3);
+        trackRepository.save(track4);
+        trackRepository.save(track5);
+        trackRepository.save(track6);
+        trackRepository.save(track7);
+//        albumRepository.save(bagsGroove);
 
         Artist pinkFloyd = new Artist("Pink Floyd", Genre.ROCK);
+        artistRepository.save(pinkFloyd);
         Track track8 = new Track("Speak To Me / Breathe", pinkFloyd, Genre.ROCK, 4.00);
         Track track9 = new Track("On The Run", pinkFloyd, Genre.ROCK, 4.00);
         Track track10 = new Track("Time", pinkFloyd, Genre.ROCK, 4.00);
@@ -66,8 +76,19 @@ public class DataLoader implements ApplicationRunner {
         theDarkSideOfTheMoon.getTracks().add(track14);
         theDarkSideOfTheMoon.getTracks().add(track15);
         theDarkSideOfTheMoon.getTracks().add(track16);
+//        albumRepository.save(theDarkSideOfTheMoon);
+        trackRepository.save(track8);
+        trackRepository.save(track9);
+        trackRepository.save(track10);
+        trackRepository.save(track11);
+        trackRepository.save(track12);
+        trackRepository.save(track13);
+        trackRepository.save(track14);
+        trackRepository.save(track15);
+        trackRepository.save(track16);
 
         Artist bbKing = new Artist("B. B. King", Genre.BLUES);
+        artistRepository.save(bbKing);
         Track track17 = new Track("Introduction", bbKing, Genre.BLUES, 4.00);
         Track track18 = new Track("Everyday I Have The Blues", bbKing, Genre.BLUES, 4.00);
         Track track19 = new Track("How Blue Can You Get", bbKing, Genre.BLUES, 4.00);
@@ -86,8 +107,18 @@ public class DataLoader implements ApplicationRunner {
         liveInCookCountyJail.getTracks().add(track22);
         liveInCookCountyJail.getTracks().add(track23);
         liveInCookCountyJail.getTracks().add(track24);
+//        albumRepository.save(liveInCookCountyJail);
+        trackRepository.save(track17);
+        trackRepository.save(track18);
+        trackRepository.save(track19);
+        trackRepository.save(track20);
+        trackRepository.save(track21);
+        trackRepository.save(track22);
+        trackRepository.save(track23);
+        trackRepository.save(track24);
 
         Artist dollyParton = new Artist("Dolly Parton", Genre.COUNTRY);
+        artistRepository.save(dollyParton);
         Track track25 = new Track("Star of the Show", dollyParton, Genre.COUNTRY, 3.56);
         Track track26 = new Track("Down", dollyParton, Genre.COUNTRY,3.35);
         Track track27 = new Track("You're The Only One", dollyParton, Genre.COUNTRY, 3.21);
@@ -110,8 +141,20 @@ public class DataLoader implements ApplicationRunner {
         liveInCookCountyJail.getTracks().add(track32);
         liveInCookCountyJail.getTracks().add(track33);
         liveInCookCountyJail.getTracks().add(track34);
+//        albumRepository.save(greatBallsOfFire);
+        trackRepository.save(track25);
+        trackRepository.save(track26);
+        trackRepository.save(track27);
+        trackRepository.save(track28);
+        trackRepository.save(track29);
+        trackRepository.save(track30);
+        trackRepository.save(track31);
+        trackRepository.save(track32);
+        trackRepository.save(track33);
+        trackRepository.save(track34);
 
         Artist philipGlass = new Artist("Philip Glass", Genre.CLASSICAL);
+        artistRepository.save(philipGlass);
         Track track35 = new Track("Opening", philipGlass, Genre.CLASSICAL, 6.24);
         Track track36 = new Track("Floe", philipGlass, Genre.CLASSICAL, 5.59);
         Track track37 = new Track("Island", philipGlass, Genre.CLASSICAL, 7.39);
@@ -126,6 +169,13 @@ public class DataLoader implements ApplicationRunner {
         glassworks.getTracks().add(track38);
         glassworks.getTracks().add(track39);
         glassworks.getTracks().add(track40);
+//        albumRepository.save(glassworks);
+        trackRepository.save(track35);
+        trackRepository.save(track36);
+        trackRepository.save(track37);
+        trackRepository.save(track38);
+        trackRepository.save(track39);
+        trackRepository.save(track40);
 
         Artist skeeMask = new Artist("Skee Mask", Genre.ELECTRONIC);
         Track track41 = new Track("Cerroverb", skeeMask, Genre.ELECTRONIC, 5.34);
@@ -379,10 +429,15 @@ public class DataLoader implements ApplicationRunner {
         uptownSpecial.getTracks().add(track147);
         uptownSpecial.getTracks().add(track148);
 
-        User joao = new User("jp");
         User faizan = new User("fk");
         User hasmeet = new User("hk");
+        User joao = new User("jp");
         User milo = new User("mc");
+
+        userRepository.save(faizan);
+        userRepository.save(hasmeet);
+        userRepository.save(joao);
+        userRepository.save(milo);
 
         joao.getFavouriteArtists().add(milesDavis);
         joao.getFavouriteTracks().add(track8);
@@ -396,6 +451,15 @@ public class DataLoader implements ApplicationRunner {
         joao.getFavouriteTracks().add(track16);
 
         joao.getFavouriteAlbums().add(revolver);
+
+        Playlist hasmeetsPlaylist = new Playlist("Hasmeet's favourites", hasmeet);
+        hasmeetsPlaylist.getTracks().add(track113);
+        hasmeetsPlaylist.getTracks().add(track114);
+        hasmeetsPlaylist.getTracks().add(track115);
+        hasmeetsPlaylist.getTracks().add(track116);
+        hasmeetsPlaylist.getTracks().add(track117);
+        hasmeetsPlaylist.getTracks().add(track118);
+        playlistRepository.save(hasmeetsPlaylist);
     }
 }
 
