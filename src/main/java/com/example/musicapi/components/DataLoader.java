@@ -1,9 +1,6 @@
 package com.example.musicapi.components;
 
-import com.example.musicapi.models.Album;
-import com.example.musicapi.models.Artist;
-import com.example.musicapi.models.Genre;
-import com.example.musicapi.models.Track;
+import com.example.musicapi.models.*;
 import com.example.musicapi.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -381,6 +378,24 @@ public class DataLoader implements ApplicationRunner {
         uptownSpecial.getTracks().add(track146);
         uptownSpecial.getTracks().add(track147);
         uptownSpecial.getTracks().add(track148);
+
+        User joao = new User("jp");
+        User faizan = new User("fk");
+        User hasmeet = new User("hk");
+        User milo = new User("mc");
+
+        joao.getFavouriteArtists().add(milesDavis);
+        joao.getFavouriteTracks().add(track8);
+        joao.getFavouriteTracks().add(track9);
+        joao.getFavouriteTracks().add(track10);
+        joao.getFavouriteTracks().add(track11);
+        joao.getFavouriteTracks().add(track12);
+        joao.getFavouriteTracks().add(track13);
+        joao.getFavouriteTracks().add(track14);
+        joao.getFavouriteTracks().add(track15);
+        joao.getFavouriteTracks().add(track16);
+
+        joao.getFavouriteAlbums().add(revolver);
     }
 }
 
