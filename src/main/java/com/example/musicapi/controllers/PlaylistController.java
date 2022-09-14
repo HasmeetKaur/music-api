@@ -4,7 +4,6 @@ import com.example.musicapi.models.Playlist;
 import com.example.musicapi.models.Reply;
 import com.example.musicapi.models.Track;
 import com.example.musicapi.services.PlaylistService;
-import com.example.musicapi.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,9 +18,6 @@ public class PlaylistController {
 
     @Autowired
     PlaylistService playlistService;
-
-    @Autowired
-    UserService userService;
 
     @GetMapping
     public ResponseEntity<List<Playlist>> getAllPlaylists() {

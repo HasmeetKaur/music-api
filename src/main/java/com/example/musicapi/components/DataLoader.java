@@ -447,7 +447,7 @@ public class DataLoader implements ApplicationRunner {
 
         joao.getFavouriteAlbums().add(liveInCookCountyJail);
 
-        Playlist hasmeetsPlaylist = new Playlist("Hasmeet's favourites", hasmeet);
+        Playlist hasmeetsPlaylist = new Playlist("Hasmeet's Songs for Painting", hasmeet);
         hasmeetsPlaylist.getTracks().add(track3);
         hasmeetsPlaylist.getTracks().add(track4);
         hasmeetsPlaylist.getTracks().add(track5);
