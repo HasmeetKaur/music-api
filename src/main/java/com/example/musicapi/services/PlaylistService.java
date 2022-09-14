@@ -10,6 +10,8 @@ import com.example.musicapi.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -92,6 +94,18 @@ public class PlaylistService {
         } else {
             playlistRepository.delete(playlist.get());
             return new Reply(true, "Playlist deleted.");
+        }
+    }
+
+    public List<Track> shufflePlaylistById(long id) {
+        Optional<Playlist> playlist = playlistRepository.findById(id);
+
+        if (playlist.isEmpty()) {
+            return null;
+        } else {
+            List<Track> playlistToShuffle = playlist.get().getTracks();
+            Collections.shuffle(playlistToShuffle);
+            return playlistToShuffle;
         }
     }
 }

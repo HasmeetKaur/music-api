@@ -2,6 +2,7 @@ package com.example.musicapi.controllers;
 
 import com.example.musicapi.models.Playlist;
 import com.example.musicapi.models.Reply;
+import com.example.musicapi.models.Track;
 import com.example.musicapi.services.PlaylistService;
 import com.example.musicapi.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,6 +56,12 @@ public class PlaylistController {
     public ResponseEntity<String> removePlaylistById(@PathVariable long id) {
         Reply reply = playlistService.removePlaylistById(id);
         return reply.isPassed() ? new ResponseEntity<>(reply.getMessage(), HttpStatus.OK) : new ResponseEntity<>(reply.getMessage(), HttpStatus.NOT_FOUND);
+    }
+
+    @GetMapping(value = "/shuffle/{id}")
+    public ResponseEntity<List<Track>> shufflePlaylist(@PathVariable long id) {
+        List<Track> playlist = playlistService.shufflePlaylistById(id);
+        return playlist != null ? new ResponseEntity<>(playlist, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
 }
