@@ -32,7 +32,7 @@ public class TrackController {
         }
     }
 
-    @GetMapping(value = "/genre")
+    @GetMapping(value = "/genre/{genre}")
     public ResponseEntity<List<Track>> getTracksByGenre(@PathVariable Genre genre){
         List<Track> tracks = trackService.getTracksByGenre(genre);
         return new ResponseEntity<>(tracks, HttpStatus.OK);

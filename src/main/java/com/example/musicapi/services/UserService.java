@@ -54,6 +54,7 @@ public class UserService {
             return new Reply(false, "Not found.");
         } else {
             user.get().getFavouriteTracks().add(track.get());
+            userRepository.save(user.get());
             return new Reply(true, "Track successfully added to favourites.");
         }
     }
@@ -66,6 +67,7 @@ public class UserService {
             return new Reply(false, "Not found.");
         } else {
             user.get().getFavouriteAlbums().add(album.get());
+            userRepository.save(user.get());
             return new Reply(true, "Album successfully added to favourites.");
         }
     }
@@ -78,6 +80,7 @@ public class UserService {
             return new Reply(false, "Not found.");
         } else {
             user.get().getFavouriteArtists().add(artist.get());
+            userRepository.save(user.get());
             return new Reply(true, "Artist successfully added to favourites.");
         }
     }
@@ -92,21 +95,23 @@ public class UserService {
             return new Reply(false, "Track not in favourites.");
         } else {
             user.get().getFavouriteTracks().remove(track.get());
-            return new Reply(true, "Track successfully added to favourites.");
+            userRepository.save(user.get());
+            return new Reply(true, "Track successfully removed from favourites.");
         }
     }
 
-    public Reply removeAlbumToFavouritesById(Long albumId, Long userId) {
+    public Reply removeAlbumFromFavouritesById(Long albumId, Long userId) {
         Optional<User> user = userRepository.findById(userId);
         Optional<Album> album = albumRepository.findById(albumId);
 
         if (user.isEmpty() || album.isEmpty()) {
             return new Reply(false, "Not found.");
-        } else if (!user.get().getFavouriteTracks().contains(album.get())) {
+        } else if (!user.get().getFavouriteAlbums().contains(album.get())) {
             return new Reply(false, "Album not in favourites.");
         } else {
-            user.get().getFavouriteTracks().remove(album.get());
-            return new Reply(true, "Album successfully added to favourites.");
+            user.get().getFavouriteAlbums().remove(album.get());
+            userRepository.save(user.get());
+            return new Reply(true, "Album successfully removed from favourites.");
         }
     }
 
@@ -116,11 +121,12 @@ public class UserService {
 
         if (user.isEmpty() || artist.isEmpty()) {
             return new Reply(false, "Not found.");
-        } else if (!user.get().getFavouriteTracks().contains(artist.get())) {
+        } else if (!user.get().getFavouriteArtists().contains(artist.get())) {
             return new Reply(false, "Artist in favourites.");
         } else {
-            user.get().getFavouriteTracks().remove(artist.get());
-            return new Reply(true, "Artist successfully added to favourites.");
+            user.get().getFavouriteArtists().remove(artist.get());
+            userRepository.save(user.get());
+            return new Reply(true, "Artist successfully removed from favourites.");
         }
     }
 }

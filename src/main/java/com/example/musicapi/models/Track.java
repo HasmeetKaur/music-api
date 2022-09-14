@@ -36,7 +36,7 @@ public class Track {
         return name;
     }
 
-    public void setName(String word) {
+    public void setName(String name) {
         this.name = name;
     }
 

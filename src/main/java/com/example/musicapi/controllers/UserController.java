@@ -53,7 +53,7 @@ public class UserController {
 
     @PostMapping(value = "/{userId}/favourites/artists/{artistId}")
     public ResponseEntity<String> addArtistToFavouritesById(@PathVariable long userId, @PathVariable long artistId) {
-        Reply reply = userService.addTrackToFavouritesById(artistId, userId);
+        Reply reply = userService.addArtistToFavouritesById(artistId, userId);
         return reply.isPassed() ? new ResponseEntity<>(reply.getMessage(), HttpStatus.OK) : new ResponseEntity<>(reply.getMessage(), HttpStatus.NOT_FOUND);
     }
 
@@ -65,13 +65,13 @@ public class UserController {
 
     @DeleteMapping(value = "/{userId}/favourites/albums/{albumId}")
     public ResponseEntity<String> removeAlbumFromFavouritesById(@PathVariable long userId, @PathVariable long albumId) {
-        Reply reply = userService.removeTrackFromFavouritesById(albumId, userId);
+        Reply reply = userService.removeAlbumFromFavouritesById(albumId, userId);
         return reply.isPassed() ? new ResponseEntity<>(reply.getMessage(), HttpStatus.OK) : new ResponseEntity<>(reply.getMessage(), HttpStatus.NOT_FOUND);
     }
 
     @DeleteMapping(value = "/{userId}/favourites/artists/{artistId}")
     public ResponseEntity<String> removeArtistFromFavouritesById(@PathVariable long userId, @PathVariable long artistId) {
-        Reply reply = userService.removeTrackFromFavouritesById(artistId, userId);
+        Reply reply = userService.removeArtistFromFavouritesById(artistId, userId);
         return reply.isPassed() ? new ResponseEntity<>(reply.getMessage(), HttpStatus.OK) : new ResponseEntity<>(reply.getMessage(), HttpStatus.NOT_FOUND);
     }
 }
