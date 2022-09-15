@@ -32,17 +32,17 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 - Full CRUD functionality
 
 ## **Table of Contents:**
-* [Setup and Instructions](/#Setup#and#Instructions#for#using#the#Project:)
-* [Project Structure](/Project#Structure:)
-* [UML](/Unified#Modelling#Language#Diagrams#(UML):)
-* [ERD](/Setup#and#Instructions#for#using#the#Project:)
-* [Minimum Viable Product (MVP)](/MVP:)
-* [Extensions](/Extension:)
-* [Plain Old Java Objects (POJOs)](/Plain#Old#Java#Objects#(POJOs):)
-* [Running the API - List of Possible Commands (CRUD Functionality)](/Running#the#API#-#List#of#Possible#Commands#(CRUD#Functionality):)
-* [Testing](/Testing:)
-* [Further Implementations & Extensions](/Further#Implementations#&#Extensions:)
-* [Acknowledgements](/Acknowledgments:)
+* [Setup and Instructions](/#Setup#and-Instructions-for-using-the-Project:)
+* [Project Structure](/#Project-Structure:)
+* [UML](/#Unified-Modelling-Language-Diagrams-(UML):)
+* [ERD](/#Setup-and-Instructions-for-using-the-Project:)
+* [Minimum Viable Product (MVP)](/#MVP:)
+* [Extensions](/#Extension:)
+* [Plain Old Java Objects (POJOs)](/#Plain-Old-Java-Objects-(POJOs):)
+* [Running the API - List of Possible Commands (CRUD Functionality)](/#Running-the-API---List-of-Possible-Commands-(CRUD-Functionality):)
+* [Testing](/#Testing:)
+* [Further Implementations & Extensions](/#Further-Implementations-&-Extensions:)
+* [Acknowledgements](/#Acknowledgments:)
 
 ## **Setup and Instructions for using the Project:**
 1. Make sure that you have Java 17 installed to run BeatzNTA API
@@ -58,7 +58,7 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 ## **Entity Relationship Diagrams (ERD):**
 ![Alt](/ERD_Diagram.png "Logo")
 
-### **MVP:**
+## **MVP:**
 For our MVP, we wanted to create an API with full CRUD functionality with 5x classes:
 
 * User
@@ -67,7 +67,7 @@ For our MVP, we wanted to create an API with full CRUD functionality with 5x cla
 * Track
 * Album
 
-### **Extension:**
+## **Extension:**
 
 For our extension, we wanted to
 * add a 'shuffle' button method to generate a randomised playlist.
