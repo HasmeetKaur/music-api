@@ -1,48 +1,48 @@
-#**READ ME (MUSIC API):**
+# **READ ME (MUSIC API):**
 
-##**Who we are:**
+## **Who we are:**
 ![Alt](/logo.png "Logo")
-**This isn’t just a Spotify clone, this is a BNTA Spotify clone.
+**This isn’t just a Spotify clone, this is a BNTA Spotify clone.**
 
-##**Project Overview:**
+## **Project Overview:**
 We are the team behind the MusicAPI. 4 members of Cohort 6 from the Bright Network Technology Academy!
 
 
-##**This API features:**
+## **This API features:**
 
-##**Table of Contents:**
+## **Table of Contents:**
 
-##**Setup and Instructions for using the Project:**
+## **Setup and Instructions for using the Project:**
 
-##**Project Structure:**
+## **Project Structure:**
 
-##**Unified Modelling Language Diagrams (UML):**
+## **Unified Modelling Language Diagrams (UML):**
 
-###**MVP:**
+### **MVP:**
 
-###**Extension:**
+### **Extension:**
 
-##**Entity Relationship Diagrams (ERD):**
+## **Entity Relationship Diagrams (ERD):**
 
-###**MVP:**
+### **MVP:**
 
-###**Extension:**
+### **Extension:**
 
-##**Unified Modeling Language (UML):**
+## **Unified Modeling Language (UML):**
 
-##**MVP:**
+## **MVP:**
 
-##**Extension:**
+## **Extension:**
 
-##**Plain Old Java Objects (POJOs):**
+## **Plain Old Java Objects (POJOs):**
 
-##**Running the API - List of Possible Commands (CRUD Functionality):**
+## **Running the API - List of Possible Commands (CRUD Functionality):**
 
-##**Testing:**
+## **Testing:**
 Example of Postman testing:
 Postman:
 
-##**Further Implementations & Extensions:**
+## **Further Implementations & Extensions:**
 
-##**Acknowledgments:**
+## **Acknowledgments:**
 
