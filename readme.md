@@ -49,6 +49,8 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 2. Clone this repository by typing the following command into your terminal:
    git clone git@github.com:HasmeetKaur/music-api.git
 3. You can access the endpoints via an API platform such as Postman or through the browser at https://localhost:8080/{endpoint}
+4. You can access the SQL tables on Postico after typing the following command into your terminal:
+    Createdb music_api
 
 ## **Project Structure:**
 This project is structured as below.
@@ -132,10 +134,22 @@ localhost:8080/ ...
 | `…/users/{id} ` | `DELETE` | Remove User by Id |
 
 ## **Testing:**
-Example of Postman testing:
-Postman:
+Example of Postman testing: See below 3 examples of testing in Postman.
+
+1. Shuffle Playlist
+![Alt](/testing-screenshots/shuffled_playlist.png "Shuffle Playlist Test")
+
+2. Find By Name
+![Alt](/testing-screenshots/search_album_by_name.png "Search Album By Name")
+
+3. Favourite Tracks By User Id
+![Alt](/testing-screenshots/get_favourite_tracks_by_user_id.png "Favourite Tracks By User Id")
 
 ## **Further Implementations & Extensions:**
+Further functionalities we would like to develop into this API are:
+
+* Give users personalised recommendations based on their recently listened/favourite genres/most listened to artists
+* Add authentication to give full access to admins and restricted access to users.
 
 ## **Acknowledgments:**
 A special thank you to Iain, Zsolt, Anna, Colin, Richard, and Phil, for all the advice and support during the project.
