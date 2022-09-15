@@ -32,19 +32,19 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 - Full CRUD functionality
 
 ## **Table of Contents:**
-* [Setup and Instructions](/#id1)
-* [Project Structure](/#Project-Structure:)
-* [UML](/#Unified-Modelling-Language-Diagrams-(UML):)
-* [ERD](/#Setup-and-Instructions-for-using-the-Project:)
-* [Minimum Viable Product (MVP)](/#MVP:)
-* [Extensions](/#Extension:)
-* [Plain Old Java Objects (POJOs)](/#Plain-Old-Java-Objects-(POJOs):)
-* [Running the API - List of Possible Commands (CRUD Functionality)](/#Running-the-API---List-of-Possible-Commands-(CRUD-Functionality):)
-* [Testing](/#Testing:)
-* [Further Implementations & Extensions](/#Further-Implementations-&-Extensions:)
-* [Acknowledgements](/#Acknowledgments:)
+* [Setup and Instructions](#setup-and-instructions-for-using-the-project)
+* [Project Structure](#project-structure)
+* [UML](#unified-modelling-language-diagrams-uml)
+* [ERD](#entity-relationship-diagrams-erd)
+* [Minimum Viable Product (MVP)](#mvp)
+* [Extensions](#extension)
+* [Plain Old Java Objects (POJOs)](#plain-old-java-objects-pojos)
+* [Running the API - List of Possible Commands (CRUD Functionality)](#running-the-api---list-of-possible-commands-crud-functionality)
+* [Testing](#testing)
+* [Further Implementations & Extensions](#further-implementations--extensions)
+* [Acknowledgements](#acknowledgments)
 
-## **Setup and Instructions for using the Project:**(#id1) 
+## **Setup and Instructions for using the Project:** 
 1. Make sure that you have Java 17 installed to run BeatzNTA API
 2. Clone this repository by typing the following command into your terminal:
    git clone git@github.com:HasmeetKaur/music-api.git
@@ -134,15 +134,15 @@ localhost:8080/ ...
 | `…/users/{id} ` | `DELETE` | Remove User by Id |
 
 ## **Testing:**
-Example of Postman testing: See below 3 examples of testing in Postman.
+See below 3 examples of testing in Postman:
 
-1. Shuffle Playlist
+1. Shuffle Playlist:
 ![Alt](/testing-screenshots/shuffled_playlist.png "Shuffle Playlist Test")
 
-2. Find By Name
+2. Find By Name:
 ![Alt](/testing-screenshots/search_album_by_name.png "Search Album By Name")
 
-3. Favourite Tracks By User Id
+3. Favourite Tracks By User Id:
 ![Alt](/testing-screenshots/get_favourite_tracks_by_user_id.png "Favourite Tracks By User Id")
 
 ## **Further Implementations & Extensions:**
