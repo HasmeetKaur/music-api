@@ -32,7 +32,7 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 - Full CRUD functionality
 
 ## **Table of Contents:**
-* [Setup and Instructions](/#Setup-and-Instructions-for-using-the-Project:)
+* [Setup and Instructions](/#id1)
 * [Project Structure](/#Project-Structure:)
 * [UML](/#Unified-Modelling-Language-Diagrams-(UML):)
 * [ERD](/#Setup-and-Instructions-for-using-the-Project:)
@@ -44,18 +44,19 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 * [Further Implementations & Extensions](/#Further-Implementations-&-Extensions:)
 * [Acknowledgements](/#Acknowledgments:)
 
-## **Setup and Instructions for using the Project:**{#1} 
+## **Setup and Instructions for using the Project:**{#id1} 
 1. Make sure that you have Java 17 installed to run BeatzNTA API
 2. Clone this repository by typing the following command into your terminal:
    git clone git@github.com:HasmeetKaur/music-api.git
 3. You can access the endpoints via an API platform such as Postman or through the browser at https://localhost:8080/{endpoint}
 
 ## **Project Structure:**
+This project is structured as below.
 
-## **Unified Modelling Language Diagrams (UML):**
+### **Unified Modelling Language Diagrams (UML):**
 ![Alt](/UML_diagram.png "Logo")
 
-## **Entity Relationship Diagrams (ERD):**
+### **Entity Relationship Diagrams (ERD):**
 ![Alt](/ERD_Diagram.png "Logo")
 
 ## **MVP:**
