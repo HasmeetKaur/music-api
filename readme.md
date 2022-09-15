@@ -86,7 +86,6 @@ localhost:8080/ ...
 | `…/albums/search/{name} ` | `GET` | Search Album by Name |
 | `…/albums ` | `POST` | Save Album |
 | `…/albums/{id} ` | `DELETE` | Remove Album by Id |
-
 | `…/artists ` | `GET` | Get All Artist Entries |
 | `…/artists/{id} ` | `GET` | Get Artists by Id |
 | `…/artists/genre/{genre} ` | `GET` | Get Artists by Genre |
@@ -94,7 +93,6 @@ localhost:8080/ ...
 | `…/artists/search/{name} ` | `GET` | Search Artists by Name |
 | `…/artists ` | `POST` | Save Artist |
 | `…/artists/{id} ` | `DELETE` | Remove Artist by Id |
-
 | `…/tracks ` | `GET` | Get All Track Entries |
 | `…/tracks/{id} ` | `GET` | Get Tracks by Id |
 | `…/tracks/genre/{genre} ` | `GET` | Get Tracks by Genre |
@@ -103,7 +101,6 @@ localhost:8080/ ...
 | `…/tracks/search/{name} ` | `GET` | Search Tracks by Name |
 | `…/tracks ` | `POST` | Save Track |
 | `…/tracks/{id} ` | `DELETE` | Remove Track by Id |
-
 | `…/playlists ` | `GET` | Get All Playlists |
 | `…/playlists/{userId} ` | `GET` | Get All Playlists by User Id |
 | `…/playlists/shuffle/{id} ` | `GET` | Shuffle Playlist |
@@ -111,7 +108,6 @@ localhost:8080/ ...
 | `…/playlists/{userId}/{playlistName} ` | `POST` | Save Playlist |
 | `…/playlists/{playlistId}/tracks/{trackId} ` | `DELETE` | Remove Track from Playlist by Id |
 | `…/playlists/{id} ` | `DELETE` | Remove Playlist by Id |
-
 | `…/users ` | `GET` | Get All Users |
 | `…/users/{id} ` | `GET` | Get User by Id |
 | `…/users/{userId}/favourites/tracks/{trackId} ` | `POST` | Add Track to Favourites by Id |
