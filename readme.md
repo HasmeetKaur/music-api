@@ -4,7 +4,22 @@
 ![Alt](/logo.png "Logo")
 **This isn’t just a Spotify clone, this is a BNTA Spotify clone.**
 
-## **Project Overview:**
+## **Table of Contents:**
+* [Team Overview](#team-overview)
+* [Project Overview](#project-overview)
+* [Setup and Instructions](#setup-and-instructions-for-using-the-project)
+* [Project Structure](#project-structure)
+* [UML](#unified-modelling-language-diagrams-uml)
+* [ERD](#entity-relationship-diagrams-erd)
+* [Minimum Viable Product (MVP)](#mvp)
+* [Extensions](#extension)
+* [Plain Old Java Objects (POJOs)](#plain-old-java-objects-pojos)
+* [Running the API - List of Possible Commands (CRUD Functionality)](#running-the-api---list-of-possible-commands-crud-functionality)
+* [Testing](#testing)
+* [Further Implementations & Extensions](#further-implementations--extensions)
+* [Acknowledgements](#acknowledgments)
+
+## **Team Overview:**
 We are the team behind the MusicAPI. 4 members of Cohort 6 from the Bright Network Technology Academy!
 
 * Faizan Khan
@@ -26,30 +41,20 @@ We are the team behind the MusicAPI. 4 members of Cohort 6 from the Bright Netwo
 ## **Project Overview**
 As part of the Bright Network Technology Academy, we were assigned a group project to research, plan and develop an API in less than a week. As a group, we wanted to create an API which we would want to use personally.
 
-## **This API features:**
+### **This API features:**
 - One-to-Many and Many-to-Many relationships
 - Derived queries and queries for multiple endpoints
 - Full CRUD functionality
 
-## **Table of Contents:**
-* [Setup and Instructions](#setup-and-instructions-for-using-the-project)
-* [Project Structure](#project-structure)
-* [UML](#unified-modelling-language-diagrams-uml)
-* [ERD](#entity-relationship-diagrams-erd)
-* [Minimum Viable Product (MVP)](#mvp)
-* [Extensions](#extension)
-* [Plain Old Java Objects (POJOs)](#plain-old-java-objects-pojos)
-* [Running the API - List of Possible Commands (CRUD Functionality)](#running-the-api---list-of-possible-commands-crud-functionality)
-* [Testing](#testing)
-* [Further Implementations & Extensions](#further-implementations--extensions)
-* [Acknowledgements](#acknowledgments)
-
 ## **Setup and Instructions for using the Project:** 
 1. Make sure that you have Java 17 installed to run BeatzNTA API
 2. Clone this repository by typing the following command into your terminal:
-   git clone git@github.com:HasmeetKaur/music-api.git
+
+    git clone git@github.com:HasmeetKaur/music-api.git
+
 3. You can access the endpoints via an API platform such as Postman or through the browser at https://localhost:8080/{endpoint}
 4. You can access the SQL tables on Postico after typing the following command into your terminal:
+    
     Createdb music_api
 
 ## **Project Structure:**
