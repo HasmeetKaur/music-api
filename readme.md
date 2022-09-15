@@ -50,12 +50,12 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 1. Make sure that you have Java 17 installed to run BeatzNTA API
 2. Clone this repository by typing the following command into your terminal:
 
-    git clone git@github.com:HasmeetKaur/music-api.git
+```git clone git@github.com:HasmeetKaur/music-api.git```
 
 3. You can access the endpoints via an API platform such as Postman or through the browser at https://localhost:8080/{endpoint}
 4. You can access the SQL tables on Postico after typing the following command into your terminal:
     
-    Createdb music_api
+```Createdb music_api```
 
 ## **Project Structure:**
 This project is structured as below.
