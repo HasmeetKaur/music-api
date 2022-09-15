@@ -44,7 +44,7 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 * [Further Implementations & Extensions](/#Further-Implementations-&-Extensions:)
 * [Acknowledgements](/#Acknowledgments:)
 
-## **Setup and Instructions for using the Project: {1}**
+## **Setup and Instructions for using the Project: {#1}** 
 1. Make sure that you have Java 17 installed to run BeatzNTA API
 2. Clone this repository by typing the following command into your terminal:
    git clone git@github.com:HasmeetKaur/music-api.git
