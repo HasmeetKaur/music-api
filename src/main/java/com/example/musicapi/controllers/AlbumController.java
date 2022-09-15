@@ -46,7 +46,7 @@ public class AlbumController {
         return albums != null ? new ResponseEntity<>(albums, HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @GetMapping(value = "/{id}/favourites")
+    @GetMapping(value = "/favourites/{id}")
     public ResponseEntity<List<Album>> getFavouriteAlbumsByUserId(@PathVariable Long id){
         List<Album> albums = albumService.getFavouriteAlbumsByUserId(id);
         return new ResponseEntity<>(albums, HttpStatus.OK);
