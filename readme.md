@@ -42,10 +42,10 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 ## **Project Structure:**
 
 ## **Unified Modelling Language Diagrams (UML):**
-![Alt](/UML diagram.png "Logo")
+![Alt](/UML_diagram.png "Logo")
 
 ## **Entity Relationship Diagrams (ERD):**
-![Alt](/ERD Diagram.png "Logo")
+![Alt](/ERD_Diagram.png "Logo")
 
 ### **MVP:**
 For our MVP, we wanted to create an API with full CRUD functionality.with 6x classes:
