@@ -8,20 +8,20 @@
 We are the team behind the MusicAPI. 4 members of Cohort 6 from the Bright Network Technology Academy!
 
 * Faizan Khan
-    * (Github)[https://github.com/faizanahmkhan]
-    * (LinkedIn)[https://www.linkedin.com/in/fkhan38/]
+  * [Github](https://github.com/faizanahmkhan)
+  * [LinkedIn](https://www.linkedin.com/in/fkhan38/)
 
 * Hasmeet Kaur
-    * (Github)[https://github.com/HasmeetKaur]
-    * (LinkedIn)
+  * [Github](https://github.com/HasmeetKaur)
+  * [LinkedIn](https://www.linkedin.com/in/hasmeet-k-30680759/)
 
 * Milo Curran
-    * (Github)[https://github.com/Obilisk-audio]
-    * (LinkedIn)[https://www.linkedin.com/in/milo-curran96]
+  * [Github](https://github.com/Obilisk-audio)
+  * [LinkedIn](https://www.linkedin.com/in/milo-curran96)
 
 * Joao Pedro Canale Pulsz
-    * (Github)[https://github.com/joaopulsz]
-    * (LinkedIn)[https://www.linkedin.com/in/joao-pedro-canale-pulsz/]
+  * [Github](https://github.com/joaopulsz)
+  * [LinkedIn](https://www.linkedin.com/in/joao-pedro-canale-pulsz/)
 
 ## **Project Overview**
 As part of the Bright Network Technology Academy, we were assigned a group project to research, plan and develop an API in less than a week. As a group, we wanted to create an API which we would want to use personally.
