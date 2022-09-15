@@ -32,6 +32,17 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 - Full CRUD functionality
 
 ## **Table of Contents:**
+* [Setup and Instructions](/#Setup#and#Instructions#for#using#the#Project:)
+* [Project Structure](/Project#Structure:)
+* [UML](/Unified#Modelling#Language#Diagrams#(UML):)
+* [ERD](/Setup#and#Instructions#for#using#the#Project:)
+* [Minimum Viable Product (MVP)](/MVP:)
+* [Extensions](/Extension:)
+* [Plain Old Java Objects (POJOs)](/Plain#Old#Java#Objects#(POJOs):)
+* [Running the API - List of Possible Commands (CRUD Functionality)](/Running#the#API#-#List#of#Possible#Commands#(CRUD#Functionality):)
+* [Testing](/Testing:)
+* [Further Implementations & Extensions](/Further#Implementations#&#Extensions:)
+* [Acknowledgements](/Acknowledgments:)
 
 ## **Setup and Instructions for using the Project:**
 1. Make sure that you have Java 17 installed to run BeatzNTA API
@@ -48,7 +59,7 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 ![Alt](/ERD_Diagram.png "Logo")
 
 ### **MVP:**
-For our MVP, we wanted to create an API with full CRUD functionality.with 6x classes:
+For our MVP, we wanted to create an API with full CRUD functionality with 5x classes:
 
 * User
 * Playlist
@@ -126,4 +137,6 @@ Postman:
 ## **Further Implementations & Extensions:**
 
 ## **Acknowledgments:**
+A special thank you to Iain, Zsolt, Anna, Colin, Richard, and Phil, for all the advice and support during the project.
+You've made this learning process a blast!
 
