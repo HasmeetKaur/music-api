@@ -42,12 +42,10 @@ As part of the Bright Network Technology Academy, we were assigned a group proje
 ## **Project Structure:**
 
 ## **Unified Modelling Language Diagrams (UML):**
-
-### **MVP:**
-
-### **Extension:**
+![Alt](/UML diagram.png "Logo")
 
 ## **Entity Relationship Diagrams (ERD):**
+![Alt](/ERD Diagram.png "Logo")
 
 ### **MVP:**
 For our MVP, we wanted to create an API with full CRUD functionality.with 6x classes:
@@ -63,19 +61,6 @@ For our MVP, we wanted to create an API with full CRUD functionality.with 6x cla
 For our extension, we wanted to
 * add a 'shuffle' button method to generate a randomised playlist.
 * search tracks, albums, tracks
-
-
-## **Entity Relationship Diagrams (ERD):**
-
-### **MVP:**
-
-### **Extension:**
-
-## **Unified Modeling Language (UML):**
-
-## **MVP:**
-
-## **Extension:**
 
 ## **Plain Old Java Objects (POJOs):**
 | POJO 	| Type 	| Input Structure 	|
