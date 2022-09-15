@@ -63,13 +63,13 @@ For our extension, we wanted to
 * search tracks, albums, tracks
 
 ## **Plain Old Java Objects (POJOs):**
-| POJO 	| Type 	| Input Structure 	|
-|:---:	|---	|---	|
-| Track 	| String name;<br>Artist artist;<br>Genre genre (Enum);<br>double length; 	| {<br>"name": "",<br>"artist": {    <br>     "id": Long,<br>     "name": "",<br>     "genre": ""<br>           },<br>"genre": "",<br>"length": double<br>} 	|
-| Album 	| String name;<br>Artist artist;<br>int year;<br>Genre genre(Enum);<br>ArrayList<Track> tracks; 	| {<br>"name": "",<br>"artist": {<br>     "id": Long,<br>     "name": "",<br>     "genre": ""<br>           },<br>"year": int,<br>"genre": "",<br>"tracks": [ ]<br>} 	|
-| Artist 	| String name;<br>Genre genre (Enum);<br>ArrayList<Album> albums;<br>ArrayList<Track> tracks; 	| {<br>"id": Long,        <br>"name": "",<br>"genre": "",<br>"albums": [ ],      <br>"tracks": [ ]<br>} 	|
-| Playlist 	| String name;<br>User user;<br>ArrayList<Track> tracks; 	| {<br>"id": Long,<br>"name": "",<br>"user": { },<br>"tracks": { }<br>} 	|
-| User 	| String userName; <br>ArrayList<Album> favouriteAlbums;<br>ArrayList<Album> favouriteAlbums;<br>ArrayList<Artist> favouriteTracks;<br>ArrayList<Playlist> playlists; 	| {<br>"userName": "",<br>"favouriteAlbums": [],<br>"favouriteArtists": [],<br>"favouriteTracks": [],<br>"playlists": []<br>} 	|
+|   POJO   	| Type                                                                                                                                                                	| Input Structure                                                                                                                                                    	|
+|:--------:	|---------------------------------------------------------------------------------------------------------------------------------------------------------------------	|--------------------------------------------------------------------------------------------------------------------------------------------------------------------	|
+| Track    	| String name;<br>Artist artist;<br>Genre genre (Enum);<br>double length;                                                                                             	| {<br>"name": "",<br>"artist": {    <br>     "id": Long,<br>     "name": "",<br>     "genre": ""<br>           },<br>"genre": "",<br>"length": double<br>}          	|
+| Album    	| String name;<br>Artist artist;<br>int year;<br>Genre genre(Enum);<br>ArrayList<Track> tracks;                                                                       	| {<br>"name": "",<br>"artist": {<br>     "id": Long,<br>     "name": "",<br>     "genre": ""<br>           },<br>"year": int,<br>"genre": "",<br>"tracks": [ ]<br>} 	|
+| Artist   	| String name;<br>Genre genre (Enum);<br>ArrayList<Album> albums;<br>ArrayList<Track> tracks;                                                                         	| {<br>"id": Long,        <br>"name": "",<br>"genre": "",<br>"albums": [ ],      <br>"tracks": [ ]<br>}                                                              	|
+| Playlist 	| String name;<br>User user;<br>ArrayList<Track> tracks;                                                                                                              	| {<br>"id": Long,<br>"name": "",<br>"user": { },<br>"tracks": { }<br>}                                                                                              	|
+| User     	| String userName; <br>ArrayList<Album> favouriteAlbums;<br>ArrayList<Album> favouriteAlbums;<br>ArrayList<Artist> favouriteTracks;<br>ArrayList<Playlist> playlists; 	| {<br>"userName": "",<br>"favouriteAlbums": [],<br>"favouriteArtists": [],<br>"favouriteTracks": [],<br>"playlists": []<br>}                                        	|
 
 ## **Running the API - List of Possible Commands (CRUD Functionality):**
 
