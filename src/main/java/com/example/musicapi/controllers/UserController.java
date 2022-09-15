@@ -27,10 +27,10 @@ public class UserController {
         return userService.getUserById(id).isPresent() ? new ResponseEntity<>(userService.getUserById(id).get(), HttpStatus.OK) : new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping
-    public ResponseEntity<User> saveUser(@RequestBody User user) {
-        User newUser = userService.saveUser(user);
-        return new ResponseEntity<>(user, HttpStatus.CREATED);
+    @PostMapping(value = "/{username}")
+    public ResponseEntity<User> saveUser(@PathVariable String username) {
+        User newUser = userService.saveUser(username);
+        return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
 
     @DeleteMapping(value = "/{id}")
