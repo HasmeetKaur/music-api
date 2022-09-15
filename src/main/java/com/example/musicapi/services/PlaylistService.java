@@ -57,6 +57,7 @@ public class PlaylistService {
             return null;
         } else {
             playlist.get().getTracks().add(track.get());
+            playlistRepository.save(playlist.get());
             return playlist;
         }
     }
@@ -69,6 +70,7 @@ public class PlaylistService {
             return new Reply(false, "Not found.");
         } else {
             playlist.get().getTracks().remove(track.get());
+            playlistRepository.save(playlist.get());
             return new Reply(true, "Track successfully removed from playlist.");
         }
     }
