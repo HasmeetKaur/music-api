@@ -1,7 +1,7 @@
 #**READ ME (MUSIC API):**#
 
 ##**Who we are:**##
-![Alt](/logo.png "Logo")
+![Alt](/Logo.png "Logo")
 **This isn’t just a Spotify clone, this is a BNTA Spotify clone.
 
 ##**Project Overview:**##
