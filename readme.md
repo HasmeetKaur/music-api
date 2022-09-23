@@ -103,36 +103,36 @@ localhost:8080/ ...
 | `…/albums/artist/{id} ` | `GET` | Get Albums by Artist Id |
 | `…/albums/favourites/{id} ` | `GET` | Get Favourite Albums by User Id |
 | `…/albums/search/{name} ` | `GET` | Search Album by Name |
-| `…/albums ` | `POST` | Save Album |
-| `…/albums/{id} ` | `DELETE` | Remove Album by Id |
 | `…/artists ` | `GET` | Get All Artist Entries |
 | `…/artists/{id} ` | `GET` | Get Artists by Id |
 | `…/artists/genre/{genre} ` | `GET` | Get Artists by Genre |
 | `…/artists/favourites/{id} ` | `GET` | Get Favourite Artists by User Id |
 | `…/artists/search/{name} ` | `GET` | Search Artists by Name |
-| `…/artists ` | `POST` | Save Artist |
-| `…/artists/{id} ` | `DELETE` | Remove Artist by Id |
 | `…/tracks ` | `GET` | Get All Track Entries |
 | `…/tracks/{id} ` | `GET` | Get Tracks by Id |
 | `…/tracks/genre/{genre} ` | `GET` | Get Tracks by Genre |
 | `…/tracks/artist/{id} ` | `GET` | Get Tracks by Artist Id |
 | `…/tracks/favourites/{id} ` | `GET` | Get Favourite Tracks by User Id |
 | `…/tracks/search/{name} ` | `GET` | Search Tracks by Name |
-| `…/tracks ` | `POST` | Save Track |
-| `…/tracks/{id} ` | `DELETE` | Remove Track by Id |
 | `…/playlists ` | `GET` | Get All Playlists |
 | `…/playlists/{userId} ` | `GET` | Get All Playlists by User Id |
 | `…/playlists/shuffle/{id} ` | `GET` | Shuffle Playlist |
-| `…/playlists/{playlistId}/tracks/{trackId} ` | `POST` | Add Track to Playlist by Id |
-| `…/playlists/{userId}/{playlistName} ` | `POST` | Save Playlist |
-| `…/playlists/{playlistId}/tracks/{trackId} ` | `DELETE` | Remove Track from Playlist by Id |
-| `…/playlists/{id} ` | `DELETE` | Remove Playlist by Id |
 | `…/users ` | `GET` | Get All Users |
 | `…/users/{id} ` | `GET` | Get User by Id |
+| `…/albums ` | `POST` | Save Album |
+| `…/artists ` | `POST` | Save Artist |
+| `…/tracks ` | `POST` | Save Track |
+| `…/playlists/{playlistId}/tracks/{trackId} ` | `POST` | Add Track to Playlist by Id |
+| `…/playlists/{userId}/{playlistName} ` | `POST` | Save Playlist |
 | `…/users/{userId}/favourites/tracks/{trackId} ` | `POST` | Add Track to Favourites by Id |
 | `…/users/{userId}/favourites/albums/{albumId} ` | `POST` | Add Album to Favourites by Id |
 | `…/users/{userId}/favourites/artists/{artistId} ` | `POST` | Add Artist to Favourites by Id |
 | `…/users ` | `POST` | Save User |
+| `…/albums/{id} ` | `DELETE` | Remove Album by Id |
+| `…/artists/{id} ` | `DELETE` | Remove Artist by Id |
+| `…/tracks/{id} ` | `DELETE` | Remove Track by Id |
+| `…/playlists/{playlistId}/tracks/{trackId} ` | `DELETE` | Remove Track from Playlist by Id |
+| `…/playlists/{id} ` | `DELETE` | Remove Playlist by Id |
 | `…/users/{userId}/favourites/tracks/{trackId} ` | `DELETE` | Remove Track from Favourites by Id |
 | `…/users/{userId}/favourites/albums/{albumId} ` | `DELETE` | Remove Album from Favourites by Id |
 | `…/users/{userId}/favourites/artists/{artistId} ` | `DELETE` | Remove Artist from Favourites by Id |
